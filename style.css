@@ -73,3 +73,22 @@ tr:hover td {
     margin-bottom: 6px;
 }
 
+.contribute {
+    margin-top: 32px;
+}
+
+.contribute a {
+    display: inline-block;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #222;
+    background: #fafafa;
+    font-weight: 500;
+}
+
+.contribute a:hover {
+    background: #f0f4ff;
+    border-color: #b5c4ff;
+}
