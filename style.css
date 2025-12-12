@@ -19,7 +19,7 @@ h1 {
 
 table {
     border-collapse: collapse;
-    min-width: 1000px;
+    min-width: 1200px;
 }
 
 th, td {
@@ -39,7 +39,7 @@ td:first-child,
 th:first-child {
     text-align: left;
     background: #fafafa;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 tr:hover td {
@@ -62,7 +62,7 @@ tr:hover td {
 
 .notes {
     margin-top: 32px;
-    max-width: 900px;
+    max-width: 1000px;
 }
 
 .notes h2 {
