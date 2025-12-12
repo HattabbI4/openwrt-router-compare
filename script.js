@@ -13,6 +13,7 @@ function buildTable(rows) {
     const table = document.getElementById("compare-table");
 
     const header = rows[0];
+
     const thead = document.createElement("thead");
     thead.innerHTML =
     "<tr>" +

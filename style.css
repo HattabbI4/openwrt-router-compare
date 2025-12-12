@@ -45,7 +45,7 @@ th:first-child {
 tr:hover td {
     background: #f3f6ff;
 }
-
+/*цвета ячеки, передаются в дате*/
 .good {
     background: #e7f7ec;
     font-weight: 600;
@@ -72,3 +72,4 @@ tr:hover td {
 .notes li {
     margin-bottom: 6px;
 }
+
