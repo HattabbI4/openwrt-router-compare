@@ -1,11 +1,17 @@
 Модель,CPU,Wi-Fi,Flash,RAM,Антенны,2.5G порт,USB,Управление питанием USB,PoE,Gigabit порты,Форм-фактор
-Cudy WR3000S,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
-Cudy WR3000E,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
-Cudy WR3000P,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR4|good,4 внешние,Да (WAN)|good,USB 2.0,Да[2]|warn,Да (WAN)|good,1 WAN + 4 LAN,Настольный
-Cudy WR3000H,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,1x (WAN)|good,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
+Bazis AX3000WM,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да,Да[2],1 WAN + 1 LAN,Компактный
+CMCC RAX3000M / RAX3000Me / XR30[1],ARM Cortex-A53,Wi-Fi 6,128 MB NAND / 64 GB eMMC,512 MB DDR4|good,4 внешние,Нет,USB 3.0|good,Да**|warn,Нет,1 WAN + 3 LAN,Настольный
 Cudy TR3000 / TR30,ARM Cortex-A53,Wi-Fi 6,128 / 256 MB NAND[4],512 MB DDR3|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да[2]|warn,Нет,1 WAN + 1 LAN,Компактный
-Cudy WBR3000UAX,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,?,Нет,1 WAN + 4 LAN,Настольный
-Netis NX31,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-Routerich AX3000,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,6 внешних|good,Нет,USB 3.0|good,Да|good,Нет,1 WAN + 3 LAN,Настольный
-CMCC RAX3000 M,ARM Cortex-A53,Wi-Fi 6,128 MB NAND / 64 GB eMMC,512 MB DDR4|good,4 внешние,Нет,USB 3.0|good,Да**|warn,Нет,1 WAN + 3 LAN,Настольный
-CMCC RAX3000 Me[1],ARM Cortex-A53,Wi-Fi 6,128 MB NAND / 64 GB eMMC,512 MB DDR3 / DDR4|good,4 внешние,Нет,USB 3.0 / Нет|good,Да[3]|warn,Нет,1 WAN + 3 LAN,Настольный
+Cudy WBR3000UAX v1,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,Да[2]|warn,Нет,1 WAN + 4 LAN,Настольный
+Cudy WR3000E v1,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
+Cudy WR3000H v1,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,1x (WAN)|good,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
+Cudy WR3000P v1,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR4|good,4 внешние,Да (WAN)|good,USB 2.0,Да[2]|warn,Да (WAN)|good,1 WAN + 4 LAN,Настольный
+Cudy WR3000S v1,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
+gl.inet Beryl AX (GL-MT3000)[5],ARM Cortex-A53,Wi-Fi 6,256 MB NAND,512 MB DDR3|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да,Нет,1 WAN + 1 LAN,Компактный
+Huasifei WH3000[5],ARM Cortex-A53,Wi-Fi 6,8 GB eMMC,1024 MB DDR3|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да|good,Нет,1 WAN + 1 LAN,Компактный
+Huasifei WH3000 Pro[5],ARM Cortex-A53,Wi-Fi 6,8 GB eMMC,1024 MB DDR3|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0 + m2 модуль|good,Да|good,Нет,1 WAN + 1 LAN,Компактный
+netis NX30v2 / NX31,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
+netis NX32U,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,USB 3.0,Нет,Нет,1 WAN + 3 LAN,Настольный
+Routerich AX3000 v1,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,6 внешних|good,Нет,USB 3.0|good,Да|good,Нет,1 WAN + 3 LAN,Настольный
+SNR CPE AX2,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
+Wavlink WL-WNT100X3[5],ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,2 внешние + 1 внутр.,Нет,USB 3.0|good,Нет,Нет,1 WAN + 1 LAN,Компактный
