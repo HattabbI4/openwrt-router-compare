@@ -2,6 +2,7 @@
 Bazis AX3000WM,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да,Да[2],1 WAN + 1 LAN,Компактный
 CMCC RAX3000M / RAX3000Me / XR30[1],ARM Cortex-A53,Wi-Fi 6,128 MB NAND / 64 GB eMMC,512 MB DDR4|good,4 внешние,Нет,USB 3.0|good,Да**|warn,Нет,1 WAN + 3 LAN,Настольный
 CreatLentem CLT-R30B1,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
+COMFAST CF-WR632AX[5],ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,4 внешние,Да (WAN),USB 3.0|good,Нет,Нет,1 WAN + 1 LAN,Компактный
 Cudy TR3000 / TR30,ARM Cortex-A53,Wi-Fi 6,128 / 256 MB NAND[4],512 MB DDR3|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да[2]|warn,Нет,1 WAN + 1 LAN,Компактный
 Cudy WBR3000UAX v1,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,Да[2]|warn,Нет,1 WAN + 4 LAN,Настольный
 Cudy WR3000E v1,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
