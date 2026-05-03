@@ -16,7 +16,7 @@ Huasifei WH3000 Pro NAND[5],ARM Cortex-A53,Wi-Fi 6,256 MB NAND,1024 MB DDR4|good
 Huasifei WH3000R NAND,ARM Cortex-A53,Wi-Fi 6,256 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,Нет,Нет,1 WAN + 3 LAN,Настольный
 netis NX30v2 / NX31,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
 netis NX32U,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,USB 3.0,Нет,Нет,1 WAN + 3 LAN,Настольный
-netis NX62,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR4,8 внешних,Да (WAN + LAN)|good,USB 3.0,Нет,Нет,1 WAN + 4 LAN,Настольный
+netis NX62,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR4|good,8 внешних|good,Да (WAN + LAN)|good,USB 3.0|good,Нет,Нет,1 WAN + 4 LAN,Настольный
 Routerich AX3000 v1,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,6 внешних|good,Нет,USB 3.0|good,Да|good,Нет,1 WAN + 3 LAN,Настольный
 SNR CPE AX2,ARM Cortex-A53,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
 Wavlink WL-WNT100X3[5],ARM Cortex-A53,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,2 внешние + 1 внутр.,Нет,USB 3.0|good,Нет,Нет,1 WAN + 1 LAN,Компактный
