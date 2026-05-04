@@ -17,12 +17,20 @@ venv/
 .env
 .env.local
 .env.*
+!.env.example
 
 # Logs and temp files
 *.log
 *.tmp
 *.swp
 *.swo
+*.swn
+*~
+*.bak
+*.orig
+.tmp/
+tmp/
+.cache/
 
 # Editors
 .vscode/
@@ -36,6 +44,11 @@ Thumbs.db
 coverage/
 htmlcov/
 .coverage
+
+# Browser/manual test artifacts
+playwright-report/
+test-results/
+blob-report/
 
 # Compressed files
 *.zip
