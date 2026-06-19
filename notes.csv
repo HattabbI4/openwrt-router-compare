@@ -6,3 +6,4 @@ id,text
 5,"С вентилятором"
 6,"OEM версия. Дополнительный порт - не LAN, а console port"
 7,"v2 часто встречается с микросхемой PHY Motorcomm YT8821. Читайте подробнее на [openwrt.org](https://openwrt.org/toh/cudy/m3000#distinguishing_between_realtek_rtl8221b_v1v2_older_vs_motorcomm_yt8821_v2_newer_variants)"
+8,"На данный момент прошивка только через UART"
