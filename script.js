@@ -153,7 +153,11 @@ function buildTable(rows, notes) {
             let text = cell;
             let cls = "";
 
-            if (cell.includes("|")) [text, cls] = cell.split("|");
+            const match = cell.match(/\|(good|warn)/);
+            if (match) {
+                cls = match[1];
+                text = cell.replace(match[0], "");
+            }
 
             td.className = cls;
             td.innerHTML = renderFootnotes(text, notes);
