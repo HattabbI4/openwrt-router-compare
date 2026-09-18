@@ -1,45 +1,45 @@
-Модель,SoC,Ядра,Частота,Wi-Fi,Flash,RAM,Антенны,2.5G порт,USB,Управление питанием USB,PoE,Gigabit порты,Форм-фактор
-ABT ASR3000,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-Bazis AX3000WM / WD-R3000N-G2A[6],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да,Нет,1 WAN + 1 LAN,Компактный
-Cetron CT3003,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-CMCC A10,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,6 внешние|good,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-CMCC RAX3000M / RAX3000Me / XR30[1],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND / 64 GB eMMC,512 MB DDR4|good,4 внешние,Нет,USB 3.0|good,Да[3]|warn,Нет,1 WAN + 3 LAN,Настольный
-CreatLentem CLT-R30B1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-COMFAST CF-WR632AX[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,4 внешние,Да (WAN),USB 3.0|good,Нет,Нет,1 WAN + 1 LAN,Компактный
-Cudy AP3000 v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR4|good,5 внутренние,Да (WAN),Нет,Нет,Да (WAN)|good,1 WAN,Точка доступа
-Cudy AP3000 Outdoor v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,2 внешние + 1 внутр.,Нет,Нет,Нет,Да (WAN)|good,1 WAN,Точка доступа
-Cudy AP3000 Wall v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,3 внутренние,Нет,Нет,Нет,Да (WAN)|good,1 WAN + 4 LAN,Точка доступа
-Cudy M3000 v1 / M3000 v2[7],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внутренние,Да (WAN)|good,Нет,Нет,Нет,1 WAN + 1 LAN,Настольный
-Cudy TR3000 / TR30,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 / 256 MB NAND[4],512 MB DDR3|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да[2]|warn,Нет,1 WAN + 1 LAN,Компактный
-Cudy WBR3000UAX v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,Да[2]|warn,Нет,1 WAN + 4 LAN,Настольный
-Cudy WR3000E v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
-Cudy WR3000H v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,1x (WAN)|good,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
-Cudy WR3000P v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR4|good,4 внешние,Да (WAN)|good,USB 2.0,Да[2]|warn,Да (WAN)|good,1 WAN + 4 LAN,Настольный
-Cudy WR3000S v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
-Cudy WR3000U v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,Нет,Нет,1 WAN + 4 LAN,Настольный
-D-Link AQUILA PRO AI M30 A1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,5 внутренние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
-GL.iNet Beryl AX (GL-MT3000)[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да,Нет,1 WAN + 1 LAN,Компактный
-GL.iNet Flint 2 (GL-MT6000),MT7986|good,4|good,2.0 ГГц|good,Wi-Fi 6,8 GB eMMC,1024 MB DDR4|good,4 внешние,Да (WAN + LAN)|good,USB 3.0|good,Нет,Нет,2 WAN + 4 LAN,Настольный
-H3C Magic NX30 Pro,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-Huasifei WH3000[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,8 GB eMMC,1024 MB DDR4|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да|good,Нет,1 WAN + 1 LAN,Компактный
-Huasifei WH3000 Pro eMMC[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,8 GB eMMC,1024 MB DDR4|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0 + m2 модуль|good,Да|good,Нет,1 WAN + 1 LAN,Компактный
-Huasifei WH3000 Pro NAND[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,1024 MB DDR4|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0 + m2 модуль|good,Да|good,Нет,1 WAN + 1 LAN,Компактный
-Huasifei WH3000R NAND,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,Нет,Нет,1 WAN + 3 LAN,Настольный
-JCG Q30 Pro,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-Konka KOMI A31,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-Mercusys MR85X[8],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,4 внешние,Да WAN|good,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-Mercusys MR90X v1,MT7986BLA|good,4|good,1.6 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,8 внешние|good,Да (WAN)|good,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-Netcore n60,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,256 MB DDR4,8 внешних|good,Да (WAN)|good,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
-netis EAP930,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внутренние,Нет,Нет,Нет,Да (WAN)|good,1 WAN,Точка доступа
-netis N6v2,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,USB 3.0,Нет,Нет,1 WAN + 3 LAN,Настольный
-netis NX30v2[9] / NX31,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-netis NX32U,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,USB 3.0,Нет,Нет,1 WAN + 3 LAN,Настольный
-netis NX62 / Netcore n60 pro,MT7986AV|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR4|good[10],8 внешних|good,Да (WAN + LAN)|good,USB 3.0|good,Нет,Нет,1 WAN + 4 LAN,Настольный
-Nokia EA0326GMP,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-Nokia XG-040G-MD,AN7581DT|good,4|good,1.2 ГГц[11],Нет|warn,256 NAND|good,512 MB DDR4|good,Нет,Да (WAN),"1x USB 2.0, 1x USB 3.0|good",2х GPIO,Нет,1 WAN + 3 LAN,Настольный
-Qihoo 360T7,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
-Routerich AX3000 v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,6 внешних|good,Нет,USB 3.0|good,Да|good,Нет,1 WAN + 3 LAN,Настольный
-SNR CPE AX2,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный
-Wavlink WL-WNT100X3[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,2 внешние + 1 внутр.,Нет,USB 3.0|good,Нет,Нет,1 WAN + 1 LAN,Компактный
-wwGate AX3000,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,Нет,Нет,1 WAN + 3 LAN,Настольный
-Xiaomi WR30U,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный
+Модель,SoC,Ядра,Частота,Wi-Fi,Flash,RAM,Антенны,2.5G порт,USB,Управление питанием USB,PoE,Gigabit порты,Форм-фактор,Доступность
+ABT ASR3000,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Китай
+Bazis AX3000WM / WD-R3000N-G2A[6],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да,Нет,1 WAN + 1 LAN,Компактный,Маркетплейсы / Китай
+Cetron CT3003,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Китай
+CMCC A10 / SuperElectron ZN-M5,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,6 внешние|good,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Китай
+CMCC RAX3000M / RAX3000Me / XR30[1],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND / 64 GB eMMC,512 MB DDR4|good,4 внешние,Нет,USB 3.0|good,Да[3]|warn,Нет,1 WAN + 3 LAN,Настольный,Китай
+CreatLentem CLT-R30B1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Китай
+COMFAST CF-WR632AX[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,4 внешние,Да (WAN),USB 3.0|good,Нет,Нет,1 WAN + 1 LAN,Компактный,Маркетплейсы
+Cudy AP3000 v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR4|good,5 внутренние,Да (WAN),Нет,Нет,Да (WAN)|good,1 WAN,Точка доступа,Маркетплейсы / Розница
+Cudy AP3000 Outdoor v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,2 внешние + 1 внутр.,Нет,Нет,Нет,Да (WAN)|good,1 WAN,Точка доступа,Маркетплейсы / Розница
+Cudy AP3000 Wall v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,3 внутренние,Нет,Нет,Нет,Да (WAN)|good,1 WAN + 4 LAN,Точка доступа,Маркетплейсы / Розница
+Cudy M3000 v1 / M3000 v2[7],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внутренние,Да (WAN)|good,Нет,Нет,Нет,1 WAN + 1 LAN,Настольный,Маркетплейсы / Розница
+Cudy TR3000 / TR30,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 / 256 MB NAND[4],512 MB DDR3|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да[2]|warn,Нет,1 WAN + 1 LAN,Компактный,Маркетплейсы / Розница
+Cudy WBR3000UAX v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,Да[2]|warn,Нет,1 WAN + 4 LAN,Настольный,Снят с продажи
+Cudy WR3000E v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный,Снят с продажи
+Cudy WR3000H v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,1x (WAN)|good,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный,Маркетплейсы / Розница
+Cudy WR3000P v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR4|good,4 внешние,Да (WAN)|good,USB 2.0,Да[2]|warn,Да (WAN)|good,1 WAN + 4 LAN,Настольный,Маркетплейсы / Розница
+Cudy WR3000S v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный,Маркетплейсы / Розница
+Cudy WR3000U v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,Нет,Нет,1 WAN + 4 LAN,Настольный,Маркетплейсы / Розница
+D-Link AQUILA PRO AI M30 A1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,5 внутренние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный,Маркетплейсы
+GL.iNet Beryl AX (GL-MT3000)[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да,Нет,1 WAN + 1 LAN,Компактный,Маркетплейсы
+GL.iNet Flint 2 (GL-MT6000),MT7986|good,4|good,2.0 ГГц|good,Wi-Fi 6,8 GB eMMC,1024 MB DDR4|good,4 внешние,Да (WAN + LAN)|good,USB 3.0|good,Нет,Нет,2 WAN + 4 LAN,Настольный,Маркетплейсы
+H3C Magic NX30 Pro,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / Китай
+Huasifei WH3000[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,8 GB eMMC,1024 MB DDR4|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0|good,Да|good,Нет,1 WAN + 1 LAN,Компактный,Маркетплейсы
+Huasifei WH3000 Pro eMMC[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,8 GB eMMC,1024 MB DDR4|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0 + m2 модуль|good,Да|good,Нет,1 WAN + 1 LAN,Компактный,Маркетплейсы
+Huasifei WH3000 Pro NAND[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,1024 MB DDR4|good,2 внешние + 1 внутр.,Да (WAN)|good,USB 3.0 + m2 модуль|good,Да|good,Нет,1 WAN + 1 LAN,Компактный,Маркетплейсы
+Huasifei WH3000R NAND,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы
+JCG Q30 Pro,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Китай
+Konka KOMI A31,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Китай
+Mercusys MR85X[8],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,4 внешние,Да WAN|good,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / Розница
+Mercusys MR90X v1,MT7986BLA|good,4|good,1.6 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,8 внешние|good,Да (WAN)|good,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / Розница
+Netcore n60,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,256 MB DDR4,8 внешних|good,Да (WAN)|good,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный,Китай
+netis EAP930,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внутренние,Нет,Нет,Нет,Да (WAN)|good,1 WAN,Точка доступа,Маркетплейсы / Розница
+netis N6v2,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,USB 3.0,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / Розница
+netis NX30v2[9] / NX31,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / Розница
+netis NX32U,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,USB 3.0,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / Розница
+netis NX62 / Netcore n60 pro,MT7986AV|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR4|good[10],8 внешних|good,Да (WAN + LAN)|good,USB 3.0|good,Нет,Нет,1 WAN + 4 LAN,Настольный,Маркетплейсы / Розница / Китай
+Nokia EA0326GMP,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Китай
+Nokia XG-040G-MD,AN7581DT|good,4|good,1.2 ГГц[11],Нет|warn,256 NAND|good,512 MB DDR4|good,Нет,Да (WAN),"1x USB 2.0, 1x USB 3.0|good",2х GPIO,Нет,1 WAN + 3 LAN,Настольный,Китай
+Qihoo 360T7,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Китай
+Routerich AX3000 v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,6 внешних|good,Нет,USB 3.0|good,Да|good,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / ТГ чат
+SNR CPE AX2,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный,Маркетплейсы
+Wavlink WL-WNT100X3[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3|good,2 внешние + 1 внутр.,Нет,USB 3.0|good,Нет,Нет,1 WAN + 1 LAN,Компактный,Маркетплейсы
+wwGate AX3000,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3|good,4 внешние,Нет,USB 3.0|good,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы
+Xiaomi WR30U,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Китай
