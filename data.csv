@@ -32,7 +32,8 @@ Mercusys MR90X v1,MT7986BLA|good,4|good,1.6 ГГц|good,Wi-Fi 6,128 MB NAND,512 
 Netcore n60,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,256 MB DDR4,8 внешних|good,Да (WAN)|good,Нет,Нет,Нет,1 WAN + 4 LAN,Настольный,Китай
 netis EAP930,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внутренние,Нет,Нет,Нет,Да (WAN)|good,1 WAN,Точка доступа,Маркетплейсы / Розница
 netis N6v2,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,USB 3.0,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / Розница
-netis NX30v2[9] / NX31,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / Розница
+netis NX30v2[9],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / Розница
+netis NX31 / W3000G,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / Розница
 netis NX32U,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешние,Нет,USB 3.0,Нет,Нет,1 WAN + 3 LAN,Настольный,Маркетплейсы / Розница
 netis NX62 / Netcore n60 pro,MT7986AV|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR4|good[10],8 внешних|good,Да (WAN + LAN)|good,USB 3.0|good,Нет,Нет,1 WAN + 4 LAN,Настольный,Маркетплейсы / Розница / Китай
 Nokia EA0326GMP,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешние,Нет,Нет,Нет,Нет,1 WAN + 3 LAN,Настольный,Китай
