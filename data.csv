@@ -38,9 +38,10 @@ netis NX31 / W3000G,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 вн�
 netis NX32U,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешних,Нет,USB 3.0|good,Нет,Нет,4,Настольный,Маркетплейсы / Розница
 netis NX62 / Netcore n60 pro,MT7986AV|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR4[9],8 внешних|good,2x 2.5G|good,USB 3.0|good,Нет,Нет,5,Настольный,Маркетплейсы / Розница / Китай
 Nokia EA0326GMP,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,4,Настольный,Китай
-Nokia XG-040G-MD,AN7581DT|good,4|good,1.2 ГГц[10],Нет|warn,256 MB NAND,512 MB DDR4,Нет,1x 2.5G,"1x USB 2.0, 1x USB 3.0|good",2х GPIO,Нет,4,Настольный,Китай
-Nokia XG-040G-MF,AN7583DT,2,1.2 ГГц[10],Нет|warn,256 MB NAND,512 MB DDR4,Нет,1x 2.5G,"1x USB 2.0, 1x USB 3.0|good",2х GPIO,Нет,4,Настольный,Китай
+Nokia XG-040G-MD,AN7581DT|good,4|good,1.2 ГГц[10],Нет|warn,256 MB NAND,512 MB DDR4,Нет,1x 2.5G,"1x USB 2.0, 1x USB 3.0|good",Да (2x GPIO)|good,Нет,4,Настольный,Китай
+Nokia XG-040G-MF,AN7583DT,2,1.2 ГГц[10],Нет|warn,256 MB NAND,512 MB DDR4,Нет,1x 2.5G,"1x USB 2.0, 1x USB 3.0|good",Да (2x GPIO)|good,Нет,4,Настольный,Китай
 Qihoo 360T7,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,4,Настольный,Китай
+Redmi AX6000 (RB06),MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR4,4 внешних,Нет,Нет,Нет,Нет,4,Настольный,Маркетплейсы / Китай
 Routerich AX3000 v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3,6 внешних,Нет,USB 3.0|good,Да|good,Нет,4,Настольный,Маркетплейсы / ТГ чат
 SNR CPE AX2,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешних,Нет,Нет,Нет,Нет,5,Настольный,Маркетплейсы
 Tenda BE12 Pro,MT7987A|good,4|good,2.0 ГГц|good,Wi-Fi 7 без 6 ГГц|warn,128 MB NAND,512 MB DDR4,5 внешних,2x 2.5G|good,Нет,Нет,Нет,5,Настольный,Маркетплейсы / Китай
