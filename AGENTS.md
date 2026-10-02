@@ -81,6 +81,10 @@ For CSV edits, also verify that:
 
 The repository uses GitHub Actions (`.github/workflows/ci.yml`) to automatically validate the format of `data.csv` and `notes.csv` on pushes and pull requests. The validation is performed by `scripts/validate_csv.py`.
 
+A companion workflow (`.github/workflows/pr-comment.yml`) uses the secure `workflow_run` event to automatically post and update status comments on pull requests (including PRs from external forks) without executing untrusted code. It searches for previous comments using a hidden HTML marker (`<!-- csv-validation-comment -->`) to update existing comments and prevent PR comment clutter.
+
+The script `scripts/validate_csv.py` supports an optional `--report <path>` flag to export a formatted Markdown report used for PR comments and the GitHub Actions Job Summary (`$GITHUB_STEP_SUMMARY`).
+
 The script enforces the following constraints to prevent bad data from breaking the table rendering:
 
 For `data.csv`:
@@ -96,7 +100,7 @@ For `notes.csv`:
 - Every row must have the exact same number of columns as the header row.
 - The `id` (first column) must be a numeric value.
 
-If any of these constraints are violated, the CI workflow will fail, blocking invalid changes.
+If any of these constraints are violated, the CI workflow will fail, blocking invalid changes, and the detailed error list will be reported directly to the PR.
 
 ## Data Rules
 
