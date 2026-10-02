@@ -32,14 +32,40 @@
     <div class="search-bar">
         <div class="search-wrapper">
             <input type="text" id="search-input" placeholder="Поиск по таблице..." aria-label="Поиск по таблице">
-            <button id="search-clear" class="search-clear" aria-label="Очистить поиск" hidden>&times;</button>
+            <button id="search-clear" class="search-clear" aria-label="Очистить поиск (Esc)" title="Очистить поиск (Esc)" hidden>&times;</button>
         </div>
+        <button id="share-btn" class="share-btn" aria-label="Скопировать ссылку" title="Скопировать ссылку с фильтрами">
+            <span class="share-icon">🔗</span>
+            <span class="share-label">Поделиться</span>
+        </button>
         <span id="search-count" class="search-count"></span>
+    </div>
+
+    <div class="filter-chips" role="toolbar" aria-label="Быстрые фильтры">
+        <button class="chip active" data-filter="all">Все</button>
+        <button class="chip" data-filter="wifi7">Wi-Fi 7</button>
+        <button class="chip" data-filter="wifi6">Wi-Fi 6</button>
+        <button class="chip" data-filter="multigig">Multi-Gig (2.5G+)</button>
+        <button class="chip" data-filter="usb3">USB 3.0</button>
+        <button class="chip" data-filter="retail">В рознице / маркетплейсах</button>
+        <button class="chip" data-filter="compact">Компактные</button>
+    </div>
+
+    <div id="compare-bar" class="compare-bar" hidden>
+        <div class="compare-info">
+            <span>Выбрано для сравнения: <strong id="compare-count">0</strong></span>
+        </div>
+        <div class="compare-actions">
+            <button id="compare-toggle-btn" class="compare-btn active">Только выбранные</button>
+            <button id="compare-clear-btn" class="compare-btn secondary">Сбросить</button>
+        </div>
     </div>
 
     <div class="table-wrap">
         <table id="compare-table"></table>
     </div>
+
+    <div id="footnote-tooltip" class="footnote-tooltip" role="tooltip" hidden></div>
 
     <section class="notes">
         <h2>Примечания</h2>
