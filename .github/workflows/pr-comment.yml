@@ -1,0 +1,108 @@
+name: PR Comment
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+
+permissions:
+  pull-requests: write
+  issues: write
+  actions: read
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.event == 'pull_request'
+    steps:
+      - name: Download report artifact
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.payload.workflow_run.id,
+            });
+
+            const matchArtifact = artifacts.data.artifacts.find((a) => a.name === 'pr-report');
+            if (!matchArtifact) {
+              console.log('No pr-report artifact found');
+              return;
+            }
+
+            const download = await github.rest.actions.downloadArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: matchArtifact.id,
+              archive_format: 'zip',
+            });
+
+            fs.writeFileSync('${{ github.workspace }}/pr-report.zip', Buffer.from(download.data));
+
+      - name: Unzip artifact
+        id: unzip
+        run: |
+          if [ -f pr-report.zip ]; then
+            unzip -o pr-report.zip -d pr-data
+            echo "extracted=true" >> $GITHUB_OUTPUT
+          else
+            echo "extracted=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Post or update PR comment
+        if: steps.unzip.outputs.extracted == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const prNumberFile = path.join('${{ github.workspace }}', 'pr-data', 'NR');
+            const reportFile = path.join('${{ github.workspace }}', 'pr-data', 'report.md');
+
+            if (!fs.existsSync(prNumberFile) || !fs.existsSync(reportFile)) {
+              console.log('Missing PR number or report file');
+              return;
+            }
+
+            const rawNumber = fs.readFileSync(prNumberFile, 'utf8').trim();
+            const issue_number = parseInt(rawNumber, 10);
+            if (isNaN(issue_number)) {
+              console.log('Invalid PR number:', rawNumber);
+              return;
+            }
+
+            const body = fs.readFileSync(reportFile, 'utf8').trim();
+            const marker = '<!-- csv-validation-comment -->';
+
+            // Find existing comments on the PR to avoid duplicate comments
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+            });
+
+            const botComment = comments.data.find(comment => comment.body && comment.body.includes(marker));
+
+            if (botComment) {
+              console.log(`Updating existing comment ${botComment.id} on PR #${issue_number}`);
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body,
+              });
+            } else {
+              console.log(`Creating new comment on PR #${issue_number}`);
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue_number,
+                body: body,
+              });
+            }

@@ -6,13 +6,13 @@ on:
     paths:
       - '**.csv'
       - 'scripts/validate_csv.py'
-      - '.github/workflows/ci.yml'
+      - '.github/workflows/**'
   pull_request:
     branches: [ "main", "master" ]
     paths:
       - '**.csv'
       - 'scripts/validate_csv.py'
-      - '.github/workflows/ci.yml'
+      - '.github/workflows/**'
 
 jobs:
   validate-csv:
@@ -27,4 +27,31 @@ jobs:
           python-version: '3.10'
 
       - name: Run CSV validation script
-        run: python scripts/validate_csv.py
+        run: python scripts/validate_csv.py --report report.md
+
+      - name: Add Job Summary
+        if: always()
+        run: |
+          if [ -f report.md ]; then
+            cat report.md >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Prepare PR comment artifact
+        if: always() && github.event_name == 'pull_request'
+        run: |
+          mkdir -p pr
+          echo "${{ github.event.pull_request.number }}" > pr/NR
+          if [ -f report.md ]; then
+            cp report.md pr/report.md
+          else
+            echo "<!-- csv-validation-comment -->" > pr/report.md
+            echo "### ❌ Не удалось сформировать отчёт проверки" >> pr/report.md
+          fi
+
+      - name: Upload PR report artifact
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-report
+          path: pr/
+          retention-days: 1
