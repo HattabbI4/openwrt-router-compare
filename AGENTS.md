@@ -60,8 +60,13 @@ The project has no automated tests. After making changes, verify manually that:
 - column sorting works (Natural Sort), and the active column has the `.active-sort` class;
 - URL parameters (`q`, `sort`, `dir`) correctly reflect and restore the page state;
 - keyboard navigation works (Tab focus on headers, Enter/Space for sorting);
-- values with `|good` and `|warn` suffixes are highlighted;
-- horizontal table scrolling works on narrow screens.
+- values with `|good` and `|warn` suffixes are highlighted and retain distinctive tinted colors on row and column hover;
+- quick filter chips filter rows and synchronize with URL parameter `f`;
+- compare mode allows selecting routers via checkboxes, toggles "Только выбранные", and synchronizes with URL parameters `compare` and `only`;
+- the share button copies the current filtered/sorted/compare URL to clipboard with visual feedback;
+- status badges in Multi-Gig and Availability columns render with distinct styled badges;
+- footnote tooltips appear on hover/focus over `sup`, and footnote items contain a backlink (`↑ к таблице`) that returns to the table;
+- table fits within the desktop viewport without horizontal scroll on standard laptop and desktop screens (>=1200px), while horizontal table scrolling remains functional on narrower screens (<1200px).
 
 For CSV edits, also verify that:
 
@@ -83,6 +88,7 @@ For `data.csv`:
 - Every row must have the exact same number of columns as the header row.
 - All double quotes and commas must be properly escaped per standard CSV format.
 - Every footnote reference (e.g. `[1]`) must have a corresponding ID in `notes.csv`.
+- Logs warnings for non-standard formats in `Multi-Gig порт` (e.g. `1 2.5G` instead of `1x 2.5G`) and `Доступность` to encourage contributors to maintain clean styling.
 
 For `notes.csv`:
 - Cannot be empty.
@@ -90,7 +96,7 @@ For `notes.csv`:
 - Every row must have the exact same number of columns as the header row.
 - The `id` (first column) must be a numeric value.
 
-If any of these conditions are violated, the CI workflow will fail, blocking invalid changes.
+If any of these constraints are violated, the CI workflow will fail, blocking invalid changes.
 
 ## Data Rules
 
