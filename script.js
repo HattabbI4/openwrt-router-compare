@@ -2,31 +2,50 @@
    THEME LOGIC
 ===================== */
 
-const toggleBtn = document.getElementById("theme-toggle");
+const themeSwitch = document.getElementById("theme-switch");
+const themeSwitchBtns = document.querySelectorAll(".theme-switch-btn");
 const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-function applyTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-    toggleBtn.textContent = theme === "dark" ? "☀" : "🌙";
+let currentThemeMode = localStorage.getItem("theme");
+if (currentThemeMode !== "light" && currentThemeMode !== "dark" && currentThemeMode !== "system") {
+    currentThemeMode = "system";
 }
 
 function getSystemTheme() {
     return mediaQuery.matches ? "dark" : "light";
 }
 
-const storedTheme = localStorage.getItem("theme");
-applyTheme(storedTheme || getSystemTheme());
+function updateTheme() {
+    const effectiveTheme = currentThemeMode === "system" ? getSystemTheme() : currentThemeMode;
+    document.documentElement.setAttribute("data-theme", effectiveTheme);
 
-toggleBtn.addEventListener("click", () => {
-    const current = document.documentElement.getAttribute("data-theme");
-    const newTheme = current === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", newTheme);
-    applyTheme(newTheme);
+    if (themeSwitch) {
+        themeSwitch.setAttribute("data-state", currentThemeMode);
+    }
+
+    themeSwitchBtns.forEach(btn => {
+        const isCurrent = btn.dataset.themeVal === currentThemeMode;
+        btn.classList.toggle("active", isCurrent);
+        btn.setAttribute("aria-checked", isCurrent ? "true" : "false");
+    });
+}
+
+updateTheme();
+
+themeSwitchBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const targetTheme = btn.dataset.themeVal;
+        if (targetTheme && targetTheme !== currentThemeMode) {
+            currentThemeMode = targetTheme;
+            localStorage.setItem("theme", currentThemeMode);
+            updateTheme();
+        }
+    });
 });
 
 mediaQuery.addEventListener("change", () => {
-    if (!localStorage.getItem("theme")) {
-        applyTheme(getSystemTheme());
+    if (currentThemeMode === "system") {
+        updateTheme();
     }
 });
 
@@ -102,7 +121,7 @@ function parseCSV(text) {
 }
 
 /* =====================
-   NOTES
+   NOTES & FORMATTING
 ===================== */
 
 function parseNotes(text) {
@@ -131,11 +150,11 @@ function formatCellContent(text, colIdx, notes) {
         if (/^(?:нет|-|—|none)$/i.test(clean)) {
             return `<span class="dimmed">${rendered}</span>`;
         }
-        // 10G variations (10G, 10 Гбит, 10GbE, 10Gbps, etc.)
+        // 10G variations
         if (/10\s*(?:g|г|gbe|gbps|гбит)/i.test(clean)) {
             return `<span class="tag-speed tag-10g">${rendered}</span>`;
         }
-        // 2.5G / 5G variations (1x 2.5G, 1x2.5G, 1 2.5G, 2,5G, 2.5GbE, 2.5 Гбит, etc.)
+        // 2.5G / 5G variations
         if (/(?:2[.,]5|5)\s*(?:g|г|gbe|gbps|гбит)/i.test(clean)) {
             return `<span class="tag-speed tag-25g">${rendered}</span>`;
         }
@@ -157,16 +176,60 @@ function formatCellContent(text, colIdx, notes) {
     return rendered;
 }
 
+function pluralRouters(count) {
+    const mod10 = count % 10;
+    const mod100 = count % 100;
+    if (mod100 >= 11 && mod100 <= 19) return "устройств";
+    if (mod10 === 1) return "устройство";
+    if (mod10 >= 2 && mod10 <= 4) return "устройства";
+    return "устройств";
+}
+
 /* =====================
-   TABLE
+   TABLE BUILDER
 ===================== */
 
 function buildTable(rows, notes) {
     const table = document.getElementById("compare-table");
+    const totalRows = rows.length - 1;
+
+    // Header badge
+    const totalBadge = document.getElementById("total-routers-badge");
+    if (totalBadge) {
+        totalBadge.textContent = `${totalRows} ${pluralRouters(totalRows)}`;
+    }
+
+    // Calculate chip counters
+    const chipCounts = {
+        all: totalRows,
+        wifi7: 0,
+        wifi6: 0,
+        multigig: 0,
+        usb3: 0,
+        retail: 0,
+        compact: 0
+    };
+
+    rows.slice(1).forEach(row => {
+        if (/Wi-Fi 7/i.test(row[4] || "")) chipCounts.wifi7++;
+        if (/Wi-Fi 6/i.test(row[4] || "")) chipCounts.wifi6++;
+        if (/(?:2[.,]5|5|10)\s*(?:g|г|gbe|gbps|гбит)/i.test(row[8] || "")) chipCounts.multigig++;
+        if (/USB 3\.0/i.test(row[9] || "")) chipCounts.usb3++;
+        if (/маркетплейс|розниц|рф/i.test(row[14] || "")) chipCounts.retail++;
+        if (/Компактный/i.test(row[13] || "")) chipCounts.compact++;
+    });
+
+    document.querySelectorAll(".filter-chips .chip").forEach(btn => {
+        const filter = btn.dataset.filter;
+        const countSpan = btn.querySelector(".chip-count");
+        if (countSpan && chipCounts[filter] !== undefined) {
+            countSpan.textContent = chipCounts[filter];
+        }
+    });
 
     const thead = document.createElement("thead");
     const headerRow = document.createElement("tr");
-    rows[0].forEach((h, idx) => {
+    rows[0].forEach((h) => {
         const th = document.createElement("th");
         th.textContent = h;
         th.setAttribute("role", "button");
@@ -223,6 +286,7 @@ function buildTable(rows, notes) {
     enableColumnHover(table);
     enableFootnotes(notes);
     enableShareButton();
+    enableStickyScrollWatcher();
 
     // Initialize state from URL params
     const params = new URLSearchParams(window.location.search);
@@ -236,6 +300,23 @@ function buildTable(rows, notes) {
 
     enableFilteringAndCompare(table, initialQuery, initialChip, initialCompare, initialOnly);
     enableSorting(table, parsedIdx, sortDir === "asc");
+}
+
+/* =====================
+   STICKY SCROLL SHADOW
+===================== */
+
+function enableStickyScrollWatcher() {
+    const wrap = document.querySelector(".table-wrap");
+    if (!wrap) return;
+
+    const checkScroll = () => {
+        wrap.classList.toggle("scrolled", wrap.scrollLeft > 2);
+    };
+
+    wrap.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", checkScroll, { passive: true });
+    checkScroll();
 }
 
 /* =====================
@@ -274,7 +355,6 @@ function renderNotes(notes) {
             list.appendChild(li);
         });
 
-    // Backlink click handler: scrolls back to referring footnote
     list.querySelectorAll(".note-backlink").forEach(link => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
@@ -322,12 +402,21 @@ function enableFootnotes(notes) {
         document.body.appendChild(tooltip);
     }
 
+    let hideTimeout = null;
+
     const showTooltip = (sup) => {
+        clearTimeout(hideTimeout);
         const id = sup.dataset.note;
         const text = notes[id];
         if (!text) return;
 
-        tooltip.innerHTML = `<strong>Примечание [${id}]:</strong> ${escapeHTML(text)}`;
+        const safeText = escapeHTML(text);
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        const linkified = safeText.replace(urlRegex, url => {
+            return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+        });
+
+        tooltip.innerHTML = `<strong>Примечание [${id}]:</strong> ${linkified}`;
         tooltip.hidden = false;
 
         const rect = sup.getBoundingClientRect();
@@ -351,12 +440,17 @@ function enableFootnotes(notes) {
         tooltip.style.transform = "none";
     };
 
-    const hideTooltip = () => {
-        tooltip.hidden = true;
+    const scheduleHide = () => {
+        hideTimeout = setTimeout(() => {
+            tooltip.hidden = true;
+        }, 150);
     };
 
+    tooltip.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
+    tooltip.addEventListener("mouseleave", scheduleHide);
+
     const scrollToNote = (id) => {
-        hideTooltip();
+        tooltip.hidden = true;
         const target = document.getElementById(`note-${id}`);
         if (!target) return;
         target.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -366,9 +460,9 @@ function enableFootnotes(notes) {
 
     document.querySelectorAll("sup[data-note]").forEach(sup => {
         sup.addEventListener("mouseenter", () => showTooltip(sup));
-        sup.addEventListener("mouseleave", hideTooltip);
+        sup.addEventListener("mouseleave", scheduleHide);
         sup.addEventListener("focus", () => showTooltip(sup));
-        sup.addEventListener("blur", hideTooltip);
+        sup.addEventListener("blur", scheduleHide);
 
         sup.addEventListener("click", (e) => {
             e.stopPropagation();
@@ -383,9 +477,9 @@ function enableFootnotes(notes) {
         });
     });
 
-    window.addEventListener("scroll", hideTooltip, { passive: true });
+    window.addEventListener("scroll", () => { tooltip.hidden = true; }, { passive: true });
     const wrap = document.querySelector(".table-wrap");
-    if (wrap) wrap.addEventListener("scroll", hideTooltip, { passive: true });
+    if (wrap) wrap.addEventListener("scroll", () => { tooltip.hidden = true; }, { passive: true });
 }
 
 function enableShareButton() {
@@ -424,6 +518,10 @@ function enableShareButton() {
     });
 }
 
+/* =====================
+   FILTERING & COMPARE
+===================== */
+
 function enableFilteringAndCompare(table, initialQuery, initialChip, initialCompare, initialOnly) {
     const input = document.getElementById("search-input");
     const clearBtn = document.getElementById("search-clear");
@@ -432,7 +530,10 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
     const compareBar = document.getElementById("compare-bar");
     const compareCountEl = document.getElementById("compare-count");
     const compareToggleBtn = document.getElementById("compare-toggle-btn");
+    const diffToggleBtn = document.getElementById("diff-toggle-btn");
     const compareClearBtn = document.getElementById("compare-clear-btn");
+    const emptyState = document.getElementById("empty-state");
+    const emptyResetBtn = document.getElementById("empty-reset-btn");
     const tbody = table.querySelector("tbody");
 
     const parseChips = (str) => {
@@ -443,6 +544,7 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
     let currentQuery = initialQuery;
     let activeChips = parseChips(initialChip);
     let isCompareOnly = initialOnly;
+    let isDiffMode = false;
     const selectedModels = new Set(initialCompare);
 
     const updateURL = () => {
@@ -465,6 +567,40 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
         window.history.replaceState({}, "", url);
     };
 
+    const updateDiffHighlights = () => {
+        if (!isDiffMode || !isCompareOnly || selectedModels.size < 2) {
+            table.classList.remove("diff-mode");
+            tbody.querySelectorAll(".diff-same, .diff-diff").forEach(td => {
+                td.classList.remove("diff-same", "diff-diff");
+            });
+            if (diffToggleBtn) diffToggleBtn.classList.remove("active");
+            return;
+        }
+
+        table.classList.add("diff-mode");
+        if (diffToggleBtn) diffToggleBtn.classList.add("active");
+
+        const visibleRows = Array.from(tbody.querySelectorAll("tr:not(.hidden-row)"));
+        if (visibleRows.length < 2) return;
+
+        const colCount = visibleRows[0].cells.length;
+        for (let col = 1; col < colCount; col++) {
+            const firstVal = visibleRows[0].cells[col].innerText.trim();
+            const isSame = visibleRows.every(r => r.cells[col].innerText.trim() === firstVal);
+
+            visibleRows.forEach(r => {
+                const td = r.cells[col];
+                if (isSame) {
+                    td.classList.add("diff-same");
+                    td.classList.remove("diff-diff");
+                } else {
+                    td.classList.add("diff-diff");
+                    td.classList.remove("diff-same");
+                }
+            });
+        }
+    };
+
     const updateCompareBar = () => {
         if (!compareBar) return;
         const count = selectedModels.size;
@@ -475,10 +611,16 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
                 compareToggleBtn.textContent = isCompareOnly ? "Показать все" : "Только выбранные";
                 compareToggleBtn.classList.toggle("active", isCompareOnly);
             }
+            if (diffToggleBtn) {
+                diffToggleBtn.hidden = !isCompareOnly || count < 2;
+            }
         } else {
             compareBar.hidden = true;
             isCompareOnly = false;
+            isDiffMode = false;
+            if (diffToggleBtn) diffToggleBtn.hidden = true;
         }
+        updateDiffHighlights();
     };
 
     const applyFilters = () => {
@@ -494,9 +636,10 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
             // 1. Text query
             const matchesQuery = !q || text.includes(q);
 
-            // 2. Multi-select chips (ALL active chips must match)
+            // 2. Multi-select chips
             let matchesChips = true;
             if (activeChips.has("wifi7") && !/Wi-Fi 7/i.test(row.cells[4]?.innerText || "")) matchesChips = false;
+            if (activeChips.has("wifi6") && !/Wi-Fi 6/i.test(row.cells[4]?.innerText || "")) matchesChips = false;
             if (activeChips.has("multigig") && !/(?:2[.,]5|5|10)\s*(?:g|г|gbe|gbps|гбит)/i.test(row.cells[8]?.innerText || "")) matchesChips = false;
             if (activeChips.has("usb3") && !/USB 3\.0/i.test(row.cells[9]?.innerText || "")) matchesChips = false;
             if (activeChips.has("retail") && !/маркетплейс|розниц|рф/i.test(row.cells[14]?.innerText || "")) matchesChips = false;
@@ -529,6 +672,14 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
 
         if (clearBtn) clearBtn.hidden = !currentQuery;
 
+        const wrapper = input.closest(".search-wrapper");
+        if (wrapper) wrapper.classList.toggle("has-value", Boolean(currentQuery));
+
+        // Empty state
+        if (emptyState) {
+            emptyState.hidden = visible > 0;
+        }
+
         // Update active chip UI
         chipBtns.forEach(b => {
             const filter = b.dataset.filter;
@@ -551,7 +702,10 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
                 selectedModels.add(model);
             } else {
                 selectedModels.delete(model);
-                if (selectedModels.size === 0) isCompareOnly = false;
+                if (selectedModels.size === 0) {
+                    isCompareOnly = false;
+                    isDiffMode = false;
+                }
             }
             applyFilters();
         }
@@ -561,7 +715,15 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
     if (compareToggleBtn) {
         compareToggleBtn.addEventListener("click", () => {
             isCompareOnly = !isCompareOnly;
+            if (!isCompareOnly) isDiffMode = false;
             applyFilters();
+        });
+    }
+
+    if (diffToggleBtn) {
+        diffToggleBtn.addEventListener("click", () => {
+            isDiffMode = !isDiffMode;
+            updateDiffHighlights();
         });
     }
 
@@ -569,11 +731,12 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
         compareClearBtn.addEventListener("click", () => {
             selectedModels.clear();
             isCompareOnly = false;
+            isDiffMode = false;
             applyFilters();
         });
     }
 
-    // Filter chips click (toggle logic)
+    // Filter chips click
     chipBtns.forEach(btn => {
         btn.addEventListener("click", () => {
             const filter = btn.dataset.filter;
@@ -590,7 +753,7 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
         });
     });
 
-    // Global reset on Escape
+    // Reset everything
     const resetEverything = () => {
         let changed = false;
         if (currentQuery) {
@@ -605,6 +768,7 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
         if (selectedModels.size > 0 || isCompareOnly) {
             selectedModels.clear();
             isCompareOnly = false;
+            isDiffMode = false;
             changed = true;
         }
         if (changed) {
@@ -612,6 +776,11 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
         }
     };
 
+    if (emptyResetBtn) {
+        emptyResetBtn.addEventListener("click", resetEverything);
+    }
+
+    // Keyboard shortcuts: '/' or 'Ctrl+K' for search, 'Esc' to reset
     window.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
             const tooltip = document.getElementById("footnote-tooltip");
@@ -620,10 +789,17 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
             if (document.activeElement && document.activeElement.blur) {
                 document.activeElement.blur();
             }
+        } else if ((e.key === "/" || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k")) &&
+                   document.activeElement !== input &&
+                   document.activeElement.tagName !== "INPUT" &&
+                   document.activeElement.tagName !== "TEXTAREA") {
+            e.preventDefault();
+            input.focus();
+            input.select();
         }
     });
 
-    // Search input
+    // Search input events
     input.value = currentQuery;
     input.addEventListener("input", (e) => {
         currentQuery = e.target.value;
@@ -640,6 +816,27 @@ function enableFilteringAndCompare(table, initialQuery, initialChip, initialComp
     }
 
     applyFilters();
+}
+
+/* =====================
+   SORTING
+===================== */
+
+function parseCapacityToMB(str) {
+    if (!str) return 0;
+    const regex = /(\d+(?:\.\d+)?)\s*(GB|MB|ГБ|МБ|G|M)/gi;
+    let maxMB = 0;
+    let match;
+    while ((match = regex.exec(str)) !== null) {
+        const num = parseFloat(match[1]);
+        const unit = match[2].toUpperCase();
+        let mb = num;
+        if (unit.startsWith('G') || unit.startsWith('Г')) {
+            mb = num * 1024;
+        }
+        if (mb > maxMB) maxMB = mb;
+    }
+    return maxMB;
 }
 
 function enableSorting(table, initialIdx = -1, initialAsc = true) {
@@ -667,6 +864,15 @@ function enableSorting(table, initialIdx = -1, initialAsc = true) {
                 const nameB = b.querySelector(".model-name");
                 if (nameA) valA = nameA.innerText.trim();
                 if (nameB) valB = nameB.innerText.trim();
+            }
+
+            // Smart capacity sorting for Flash (col 5) and RAM (col 6)
+            if (index === 5 || index === 6) {
+                const mbA = parseCapacityToMB(valA);
+                const mbB = parseCapacityToMB(valB);
+                if (mbA !== mbB) {
+                    return isAsc ? mbA - mbB : mbB - mbA;
+                }
             }
 
             return isAsc 

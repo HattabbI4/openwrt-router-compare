@@ -52,19 +52,20 @@ python3 -m http.server 8080
 The project has no automated tests. After making changes, verify manually that:
 
 - the table loads without browser console errors;
-- the first row and first column remain sticky;
-- theme switching works and persists in `localStorage`;
-- theme synchronizes automatically with system preference if not manually overridden;
-- footnotes in `[1]` format are converted to `sup` and scroll to the corresponding note;
-- search works correctly, shows result counts, and the clear button (X) resets the state;
-- column sorting works (Natural Sort), and the active column has the `.active-sort` class;
+- the first row and first column remain sticky, with shadow gradient appearing on horizontal scroll (`.table-wrap.scrolled`);
+- theme switching works via a 3-position segmented slider (system sync by default, light, dark), uses crisp SVG icons, and persists in `localStorage`;
+- theme synchronizes automatically with system preference when in system mode;
+- footnotes in `[1]` format are converted to `sup`, show interactive tooltips, and scroll to the corresponding note;
+- search works correctly, shows result counts, hotkeys `/` and `Ctrl+K` focus the search, and the clear button (X) resets the state;
+- when search or filter returns zero matches, a friendly empty state is displayed with a reset button;
+- column sorting works, including smart capacity sorting for Flash and RAM (MB/GB), and the active column has the `.active-sort` class;
 - URL parameters (`q`, `sort`, `dir`) correctly reflect and restore the page state;
-- keyboard navigation works (Tab focus on headers, Enter/Space for sorting);
+- keyboard navigation works (Tab focus on headers, Enter/Space for sorting, `/` for search, Esc to clear);
 - values with `|good` and `|warn` suffixes are highlighted and retain distinctive tinted colors on row and column hover;
-- quick filter chips filter rows and synchronize with URL parameter `f`;
-- compare mode allows selecting routers via checkboxes, toggles "Только выбранные", and synchronizes with URL parameters `compare` and `only`;
+- quick filter chips filter rows, show live matching counters (`.chip-count`), and synchronize with URL parameter `f`;
+- compare mode displays a floating bottom action bar, allows selecting routers via checkboxes, toggles "Только выбранные", supports "Подсветить отличия" (diff mode), and synchronizes with URL parameters `compare` and `only`;
 - the share button copies the current filtered/sorted/compare URL to clipboard with visual feedback;
-- status badges in Multi-Gig and Availability columns render with distinct styled badges;
+- status badges in Multi-Gig and Availability columns render with distinct styled badges (`.tag-25g`, `.tag-10g`, `.avail-tag`);
 - footnote tooltips appear on hover/focus over `sup`, and footnote items contain a backlink (`↑ к таблице`) that returns to the table;
 - table fits within the desktop viewport without horizontal scroll on standard laptop and desktop screens (>=1200px), while horizontal table scrolling remains functional on narrower screens (<1200px).
 
