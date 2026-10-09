@@ -19,50 +19,79 @@
 <body>
 
     <header class="top-bar">
-        <div>
-            <h1>Сравнение роутеров с поддержкой OpenWRT</h1>
-            <p class="subtitle">Технические характеристики и особенности</p>
+        <div class="brand">
+            <div class="brand-title-wrap">
+                <svg class="brand-icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="14" width="20" height="8" rx="2"></rect><line x1="6" y1="6" x2="6" y2="14"></line><line x1="18" y1="6" x2="18" y2="14"></line><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="6" cy="18" r="1" fill="currentColor"></circle><circle cx="10" cy="18" r="1" fill="currentColor"></circle></svg>
+                <h1>Сравнение роутеров с поддержкой OpenWRT</h1>
+                <span class="brand-badge" id="total-routers-badge"></span>
+            </div>
+            <p class="subtitle">Технические характеристики и особенности устройств</p>
         </div>
 
-        <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
-            🌙
-        </button>
+        <div id="theme-switch" class="theme-switch" role="radiogroup" aria-label="Выбор темы" data-state="system">
+            <div class="theme-switch-slider" aria-hidden="true"></div>
+            <button type="button" class="theme-switch-btn active" data-theme-val="system" role="radio" aria-checked="true" title="Системная тема" aria-label="Системная тема">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </button>
+            <button type="button" class="theme-switch-btn" data-theme-val="light" role="radio" aria-checked="false" title="Светлая тема" aria-label="Светлая тема">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <button type="button" class="theme-switch-btn" data-theme-val="dark" role="radio" aria-checked="false" title="Тёмная тема" aria-label="Тёмная тема">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
     </header>
 
     <div class="search-bar">
         <div class="search-wrapper">
+            <svg class="search-icon" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="6"></circle><line x1="14" y1="14" x2="18" y2="18"></line></svg>
             <input type="text" id="search-input" placeholder="Поиск по таблице..." aria-label="Поиск по таблице">
-            <button id="search-clear" class="search-clear" aria-label="Очистить поиск (Esc)" title="Очистить поиск (Esc)" hidden>&times;</button>
+            <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+            <button id="search-clear" class="search-clear" aria-label="Очистить поиск (Esc)" title="Очистить поиск (Esc)" hidden>
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="5" x2="15" y2="15"></line><line x1="15" y1="5" x2="5" y2="15"></line></svg>
+            </button>
         </div>
         <button id="share-btn" class="share-btn" aria-label="Скопировать ссылку" title="Скопировать ссылку с фильтрами">
-            <span class="share-icon">🔗</span>
+            <span class="share-icon">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </span>
             <span class="share-label">Поделиться</span>
         </button>
         <span id="search-count" class="search-count"></span>
     </div>
 
     <div class="filter-chips" role="toolbar" aria-label="Быстрые фильтры">
-        <button class="chip active" data-filter="all">Все</button>
-        <button class="chip" data-filter="wifi7">Wi-Fi 7</button>
-        <button class="chip" data-filter="wifi6">Wi-Fi 6</button>
-        <button class="chip" data-filter="multigig">Multi-Gig (2.5G+)</button>
-        <button class="chip" data-filter="usb3">USB 3.0</button>
-        <button class="chip" data-filter="retail">В рознице / маркетплейсах</button>
-        <button class="chip" data-filter="compact">Компактные</button>
+        <button class="chip active" data-filter="all">Все <span class="chip-count"></span></button>
+        <button class="chip" data-filter="wifi7">Wi-Fi 7 <span class="chip-count"></span></button>
+        <button class="chip" data-filter="wifi6">Wi-Fi 6 <span class="chip-count"></span></button>
+        <button class="chip" data-filter="multigig">Multi-Gig (2.5G+) <span class="chip-count"></span></button>
+        <button class="chip" data-filter="usb3">USB 3.0 <span class="chip-count"></span></button>
+        <button class="chip" data-filter="retail">В рознице / маркетплейсах <span class="chip-count"></span></button>
+        <button class="chip" data-filter="compact">Компактные <span class="chip-count"></span></button>
     </div>
 
     <div id="compare-bar" class="compare-bar" hidden>
         <div class="compare-info">
-            <span>Выбрано для сравнения: <strong id="compare-count">0</strong></span>
+            <span class="compare-badge" id="compare-count">0</span>
+            <span class="compare-label">для сравнения</span>
         </div>
         <div class="compare-actions">
             <button id="compare-toggle-btn" class="compare-btn active">Только выбранные</button>
-            <button id="compare-clear-btn" class="compare-btn secondary">Сбросить</button>
+            <button id="diff-toggle-btn" class="compare-btn secondary" title="Подсветить различающиеся характеристики" hidden>Подсветить отличия</button>
+            <button id="compare-clear-btn" class="compare-btn text-btn">Сбросить</button>
         </div>
     </div>
 
     <div class="table-wrap">
         <table id="compare-table"></table>
+        <div id="empty-state" class="empty-state" hidden>
+            <div class="empty-icon">
+                <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
+            <h3>Ничего не найдено</h3>
+            <p>По вашему запросу и выбранным фильтрам нет подходящих роутеров</p>
+            <button id="empty-reset-btn" class="empty-reset-btn">Сбросить фильтры и поиск</button>
+        </div>
     </div>
 
     <div id="footnote-tooltip" class="footnote-tooltip" role="tooltip" hidden></div>
