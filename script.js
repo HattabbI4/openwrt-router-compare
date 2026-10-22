@@ -243,26 +243,34 @@ function initInteractions(table, notes) {
     let sortCol = params.get("sort") !== null ? parseInt(params.get("sort"), 10) : -1;
     let sortAsc = params.get("dir") !== "desc";
 
-    const updateURL = () => {
-        const p = new URLSearchParams();
-        if (query) p.set("q", query);
-        if (activeChips.size > 0) p.set("f", Array.from(activeChips).join(","));
-        if (selectedModels.size > 0) p.set("compare", Array.from(selectedModels).join(","));
-        if (isCompareOnly) p.set("only", "1");
-        if (sortCol >= 0 && sortCol < headers.length) {
-            p.set("sort", sortCol);
-            p.set("dir", sortAsc ? "asc" : "desc");
-        }
-        const qs = p.toString();
-        window.history.replaceState({}, "", qs ? `${window.location.pathname}?${qs}` : window.location.pathname);
+    let urlTimeout = null;
+    const updateURL = (immediate = false) => {
+        clearTimeout(urlTimeout);
+        const sync = () => {
+            const p = new URLSearchParams();
+            if (query) p.set("q", query);
+            if (activeChips.size > 0) p.set("f", Array.from(activeChips).join(","));
+            if (selectedModels.size > 0) p.set("compare", Array.from(selectedModels).join(","));
+            if (isCompareOnly) p.set("only", "1");
+            if (sortCol >= 0 && sortCol < headers.length) {
+                p.set("sort", sortCol);
+                p.set("dir", sortAsc ? "asc" : "desc");
+            }
+            const qs = p.toString();
+            window.history.replaceState({}, "", qs ? `${window.location.pathname}?${qs}` : window.location.pathname);
+        };
+        if (immediate) sync();
+        else urlTimeout = setTimeout(sync, 150);
     };
 
     const updateDiffHighlights = () => {
         const visibleRows = Array.from(tbody.querySelectorAll("tr:not([hidden])"));
         if (!isDiffMode || !isCompareOnly || visibleRows.length < 2) {
-            table.classList.remove("diff-mode");
-            if (diffToggleBtn) diffToggleBtn.classList.remove("active");
-            tbody.querySelectorAll(".diff-same, .diff-diff").forEach(td => td.classList.remove("diff-same", "diff-diff"));
+            if (table.classList.contains("diff-mode")) {
+                table.classList.remove("diff-mode");
+                if (diffToggleBtn) diffToggleBtn.classList.remove("active");
+                tbody.querySelectorAll(".diff-same, .diff-diff").forEach(td => td.classList.remove("diff-same", "diff-diff"));
+            }
             return;
         }
 
@@ -370,7 +378,7 @@ function initInteractions(table, notes) {
                 : vB.localeCompare(vA, undefined, { numeric: true, sensitivity: "base" });
         });
         trs.forEach(tr => tbody.appendChild(tr));
-        updateURL();
+        updateURL(true);
     };
 
     // Header sort events
@@ -394,13 +402,18 @@ function initInteractions(table, notes) {
     });
 
     // Column hover via delegation on table
+    let lastHoverCol = -1;
     table.addEventListener("mouseover", e => {
         const cell = e.target.closest("td, th");
         if (!cell) return;
         const i = cell.cellIndex;
+        if (i === lastHoverCol) return;
+        lastHoverCol = i;
+        table.querySelectorAll(".hover-col").forEach(c => c.classList.remove("hover-col"));
         table.querySelectorAll("tr").forEach(r => r.cells[i]?.classList.add("hover-col"));
     });
-    table.addEventListener("mouseout", () => {
+    table.addEventListener("mouseleave", () => {
+        lastHoverCol = -1;
         table.querySelectorAll(".hover-col").forEach(c => c.classList.remove("hover-col"));
     });
 
@@ -489,13 +502,20 @@ function initInteractions(table, notes) {
     });
 
     // Share button
-    document.getElementById("share-btn")?.addEventListener("click", async () => {
+    const shareBtn = document.getElementById("share-btn");
+    let shareTimer = null;
+    shareBtn?.addEventListener("click", async () => {
         try {
+            updateURL(true);
             await navigator.clipboard.writeText(window.location.href);
-            const lbl = document.querySelector(".share-label");
-            const orig = lbl ? lbl.textContent : "Поделиться";
+            clearTimeout(shareTimer);
+            shareBtn.classList.add("copied");
+            const lbl = shareBtn.querySelector(".share-label");
             if (lbl) lbl.textContent = "Скопировано! ✓";
-            setTimeout(() => { if (lbl) lbl.textContent = orig; }, 2000);
+            shareTimer = setTimeout(() => {
+                shareBtn.classList.remove("copied");
+                if (lbl) lbl.textContent = "Поделиться";
+            }, 2000);
         } catch (_) {}
     });
 
