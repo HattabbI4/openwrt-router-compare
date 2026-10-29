@@ -3,15 +3,91 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Сравнение роутеров с поддержкой OpenWRT</title>
+    <title>Сравнение роутеров с поддержкой OpenWRT: Wi-Fi 6/7, 2.5G, характеристики</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Сравнительная таблица характеристик роутеров с поддержкой OpenWRT">
+    <meta name="description" content="Сравнительная таблица актуальных роутеров с поддержкой OpenWRT: фильтры по Wi-Fi 6/7, портам 2.5G, процессорам MediaTek Filogic, объему RAM/Flash и доступности в магазинах.">
+    <link rel="canonical" href="https://hattabbi4.github.io/openwrt-router-compare/">
+
     <!-- Open Graph / Facebook / Telegram -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Сравнение роутеров с поддержкой OpenWRT">
+    <meta property="og:url" content="https://hattabbi4.github.io/openwrt-router-compare/">
+    <meta property="og:title" content="Сравнение роутеров с поддержкой OpenWRT: Wi-Fi 6/7, 2.5G, характеристики">
     <meta property="og:description"
-        content="Удобная таблица характеристик, поиск и сортировка роутеров с поддержкой OpenWRT.">
-    <meta property="og:image" content="og-preview.png">
+        content="Интерактивная таблица выбора роутеров для OpenWRT: фильтры по Wi-Fi 6/7, портам 2.5G, процессорам MediaTek, объему RAM/Flash и доступности.">
+    <meta property="og:image" content="https://hattabbi4.github.io/openwrt-router-compare/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Сравнение роутеров с поддержкой OpenWRT: Wi-Fi 6/7, 2.5G, характеристики">
+    <meta name="twitter:description"
+        content="Интерактивная таблица выбора роутеров для OpenWRT: фильтры по Wi-Fi 6/7, портам 2.5G, процессорам MediaTek, памяти и доступности.">
+    <meta name="twitter:image" content="https://hattabbi4.github.io/openwrt-router-compare/og-preview.png">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://hattabbi4.github.io/openwrt-router-compare/#website",
+                "url": "https://hattabbi4.github.io/openwrt-router-compare/",
+                "name": "Сравнение роутеров с поддержкой OpenWRT",
+                "description": "Сравнительная таблица характеристик и аппаратных особенностей роутеров с поддержкой OpenWRT.",
+                "inLanguage": "ru"
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://hattabbi4.github.io/openwrt-router-compare/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Как выбрать роутер для OpenWRT в 2025–2026 году?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Обращайте внимание на платформу и объем памяти. Рекомендуется выбирать роутеры на процессорах MediaTek Filogic (MT7981B, MT7986) с объемом оперативной памяти от 256–512 МБ (для работы современных VPN-пакетов Sing-box, Xray, WireGuard и AdGuard Home) и накопителем Flash от 128 МБ NAND или eMMC."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Почему роутеры на чипах MediaTek Filogic наиболее популярны под OpenWRT?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "MediaTek активно развивает и предоставляет полностью открытые Wi-Fi драйверы (mt76) непосредственно в upstream-ядро Linux и OpenWRT. Это обеспечивает высокую стабильность беспроводной сети, поддержку аппаратного ускорения маршрутизации (flow offloading) и отличную производительность VPN."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Зачем в роутере нужен порт Multi-Gig (2.5G или 10G)?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Порты 2.5G и 10G позволяют раскрыть скорость тарифов провайдеров выше 1 Гбит/с, а также обеспечивают быстрый обмен данными внутри домашней сети между сетевым хранилищем (NAS), домашним сервером и скоростными клиентами без узких мест."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "В чем разница между Flash-памятью NAND и eMMC?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "NAND-память объемом 128–256 МБ достаточна для базовой системы OpenWRT и стандартного набора пакетов. Память eMMC объемом 4–64 ГБ дает практически неограниченное дисковое пространство: можно устанавливать тяжелые утилиты, базы GeoIP, вести расширенные логи и запускать Docker-контейнеры без внешней USB-флешки."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Как добавить новый роутер или уточнить характеристики?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Проект открыт для сообщества. Достаточно сделать Fork репозитория на GitHub, внести строку с новым роутером в файл data.csv по инструкции в README и открыть Pull Request."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <script>
@@ -106,6 +182,42 @@
     <section class="notes">
         <h2>Примечания</h2>
         <ol id="notes-list"></ol>
+    </section>
+
+    <section class="faq" id="faq">
+        <h2>Часто задаваемые вопросы (FAQ)</h2>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>Как выбрать роутер для OpenWRT в 2025–2026 году?</summary>
+                <div class="faq-answer">
+                    <p>Обращайте внимание на аппаратную платформу и объемы памяти. Рекомендуется выбирать роутеры на процессорах <strong>MediaTek Filogic</strong> (MT7981B, MT7986) с объемом оперативной памяти от <strong>256–512 МБ</strong> (для комфортной работы сервисов Sing-box, Xray, WireGuard и AdGuard Home) и накопителем Flash от <strong>128 МБ NAND</strong> или <strong>eMMC</strong>.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Почему роутеры на чипах MediaTek Filogic наиболее популярны под OpenWRT?</summary>
+                <div class="faq-answer">
+                    <p>MediaTek развивает и поставляет полностью открытые Wi-Fi драйверы (пакет <code>mt76</code>) непосредственно в основное дерево Linux и OpenWRT. Это гарантирует стабильную беспроводную связь, полноценную поддержку аппаратного ускорения маршрутизации (hardware flow offloading) и высокую скорость VPN благодаря мощным ядрам ARM Cortex-A53.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Зачем в роутере нужен порт Multi-Gig (2.5G или 10G)?</summary>
+                <div class="faq-answer">
+                    <p>Порты 2.5G и 10G позволяют без потерь использовать высокоскоростные тарифные планы провайдеров выше 1 Гбит/с, а также быстро обмениваться файлами внутри локальной сети между сетевым хранилищем (NAS), домашним сервером и скоростными клиентами Wi-Fi 6/7.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>В чем разница между Flash-памятью NAND и eMMC?</summary>
+                <div class="faq-answer">
+                    <p>NAND-памяти (128–256 МБ) достаточно для базовой прошивки OpenWRT и большинства сетевых утилит. Память eMMC (от 4 до 64 ГБ) дает практически неограниченное дисковое пространство: можно устанавливать тяжелые сетевые пакеты, базы GeoIP, вести расширенные логи или запускать Docker-контейнеры без внешней USB-флешки.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Как добавить новый роутер или уточнить характеристики?</summary>
+                <div class="faq-answer">
+                    <p>Проект поддерживается сообществом. Достаточно сделать Fork репозитория на GitHub, внести строку с новым устройством в файл <code>data.csv</code> и открыть Pull Request. Инструкция доступна в <a href="https://github.com/HattabbI4/openwrt-router-compare#readme" target="_blank" rel="noopener noreferrer">README</a>.</p>
+                </div>
+            </details>
+        </div>
     </section>
 
     <section class="contribute">
