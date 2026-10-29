@@ -328,6 +328,12 @@ h1 {
     font-weight: 500;
 }
 
+[data-theme="dark"] .chip.active {
+    background: #1d4ed8;
+    border-color: #2563eb;
+    color: #ffffff;
+}
+
 .chip-count {
     font-size: 11px;
     opacity: 0.8;
@@ -421,6 +427,7 @@ h1 {
 
 .table-wrap {
     overflow: auto;
+    min-height: 480px;
     max-height: calc(100vh - 150px);
     margin-top: 14px;
     border: 1px solid var(--border);
@@ -629,9 +636,17 @@ table.diff-mode tr:not([hidden]) td.diff-diff {
     border-color: rgba(192, 132, 252, 0.35);
 }
 
+[data-theme="dark"] td.good .tag-25g {
+    color: #93c5fd;
+}
+
+[data-theme="dark"] td.good .tag-10g {
+    color: #e9d5ff;
+}
+
 .dimmed {
     color: var(--muted);
-    opacity: 0.65;
+    opacity: 0.85;
 }
 
 .avail-tag {
@@ -1046,6 +1061,7 @@ sup:hover, sup:target {
     /* Table mobile sizing */
     .table-wrap {
         margin-top: 10px;
+        min-height: calc(100vh - 180px);
         max-height: calc(100vh - 180px);
     }
 

@@ -160,7 +160,6 @@ function buildTable(rows, notes) {
         const th = document.createElement("th");
         th.textContent = h;
         th.dataset.col = i;
-        th.setAttribute("role", "button");
         th.setAttribute("tabindex", "0");
         th.setAttribute("aria-label", `Сортировать по: ${h}`);
         th.setAttribute("aria-sort", "none");
