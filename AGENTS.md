@@ -13,6 +13,9 @@ This is a small static page for comparing routers with an OpenWRT focus.
 - `notes.csv` is the source for footnote notes.
 - `favicon.svg` is the site icon.
 - `og-preview.png` is the preview image for social media.
+- `robots.txt` directs search engine crawlers and points to the sitemap.
+- `sitemap.xml` provides sitemap indexation details for search engines.
+- `llms.txt` provides structured context for AI answer engines (GEO / LLMs).
 - `README.md` describes the data format for contributors.
 
 The project does not use a bundler, package manager, or server-side code.
@@ -68,6 +71,7 @@ The project has no automated tests. After making changes, verify manually that:
 - status badges in Multi-Gig and Availability columns render with distinct styled badges (`.tag-25g`, `.tag-10g`, `.avail-tag`);
 - footnote tooltips appear on hover/focus over `sup`, and footnote items contain a backlink (`↑ к таблице`) that returns to the table;
 - table fits within the desktop viewport without horizontal scroll on standard laptop and desktop screens (>=1200px), while horizontal table scrolling remains functional on narrower screens (<1200px).
+- the FAQ section renders under the footnotes, accordion items expand/collapse smoothly in both themes, and JSON-LD schema markup is intact in the head.
 
 For CSV edits, also verify that:
 

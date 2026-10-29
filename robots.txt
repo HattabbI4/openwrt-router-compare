@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hattabbi4.github.io/openwrt-router-compare/sitemap.xml
+
