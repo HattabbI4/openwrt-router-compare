@@ -212,11 +212,14 @@ h1 {
 ===================== */
 
 .github-corner {
+    --peel-size: 68px;
+    --peel-open: 174px;
+    --octo-open: translateY(10px) scale(1.2);
     position: absolute;
     top: 0;
     right: 0;
-    width: 68px;
-    height: 68px;
+    width: var(--peel-size);
+    height: var(--peel-size);
     z-index: 40;
     display: block;
     text-decoration: none;
@@ -227,8 +230,8 @@ h1 {
 }
 
 .github-corner:focus-visible {
-    width: 174px;
-    height: 174px;
+    width: var(--peel-open);
+    height: var(--peel-open);
     outline: 2px solid var(--link);
     outline-offset: -2px;
 }
@@ -261,16 +264,6 @@ h1 {
     );
 }
 
-.github-corner-content {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-    width: 174px;
-    height: 174px;
-    pointer-events: none;
-}
-
 .github-corner-inner {
     position: absolute;
     top: 0;
@@ -283,6 +276,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     color: #ffffff;
+    pointer-events: none;
 }
 
 .github-corner-octocat {
@@ -291,10 +285,7 @@ h1 {
     height: 26px;
     color: #ffffff;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
-    transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1),
-                width 0.36s cubic-bezier(0.22, 1, 0.36, 1),
-                height 0.36s cubic-bezier(0.22, 1, 0.36, 1),
-                margin-top 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .github-corner-cta {
@@ -350,7 +341,7 @@ h1 {
 }
 
 .github-corner:focus-visible .github-corner-octocat {
-    transform: translateY(10px) scale(1.2);
+    transform: var(--octo-open);
 }
 
 .github-corner:focus-visible .github-corner-cta {
@@ -368,13 +359,21 @@ h1 {
 
 /* Hover peel strictly on pointer devices so touchscreens navigate on first tap */
 @media (hover: hover) and (pointer: fine) {
+    .github-corner {
+        pointer-events: none;
+    }
+
+    .github-corner-reveal {
+        pointer-events: auto;
+    }
+
     .github-corner:hover {
-        width: 174px;
-        height: 174px;
+        width: var(--peel-open);
+        height: var(--peel-open);
     }
 
     .github-corner:hover .github-corner-octocat {
-        transform: translateY(10px) scale(1.2);
+        transform: var(--octo-open);
     }
 
     .github-corner:hover .github-corner-cta {
@@ -1337,8 +1336,9 @@ sup:hover, sup:target {
     }
 
     .github-corner {
-        width: 52px;
-        height: 52px;
+        --peel-size: 52px;
+        --peel-open: 162px;
+        --octo-open: translateY(16px) scale(1.35);
     }
 
     .github-corner-octocat {
@@ -1347,29 +1347,7 @@ sup:hover, sup:target {
         height: 20px;
     }
 
-    .github-corner:focus-visible {
-        width: 162px;
-        height: 162px;
-    }
-
-    .github-corner:focus-visible .github-corner-octocat {
-        width: 26px;
-        height: 26px;
-        margin-top: 13px;
-        transform: translateY(8px) scale(1.1);
-    }
-}
-
-@media (max-width: 768px) and (hover: hover) and (pointer: fine) {
-    .github-corner:hover {
-        width: 162px;
-        height: 162px;
-    }
-
-    .github-corner:hover .github-corner-octocat {
-        width: 26px;
-        height: 26px;
-        margin-top: 13px;
-        transform: translateY(8px) scale(1.1);
+    .github-corner-cta {
+        margin-top: 36px;
     }
 }
