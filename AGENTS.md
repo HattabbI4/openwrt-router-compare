@@ -68,7 +68,7 @@ The project has no automated tests. After making changes, verify manually that:
 - quick filter chips filter rows, show live matching counters (`.chip-count`), and synchronize with URL parameter `f`;
 - compare mode displays a floating bottom action bar, allows selecting routers via checkboxes, toggles "Только выбранные", supports "Подсветить отличия" (diff mode), and synchronizes with URL parameters `compare` and `only`;
 - the share button copies the current filtered/sorted/compare URL to clipboard with visual feedback;
-- status badges in Multi-Gig and Availability columns render with distinct styled badges (`.tag-25g`, `.tag-10g`, `.avail-tag`);
+- status badges in Multi-Gig and Availability columns render with distinct styled badges (`.tag-25g`, `.tag-10g`, `.speed-tags` for combined ports such as `1x 10G + 1x 2.5G`, `.avail-tag`);
 - footnote tooltips appear on hover/focus over `sup`, and footnote items contain a backlink (`↑ к таблице`) that returns to the table;
 - table fits within the desktop viewport without horizontal scroll on standard laptop and desktop screens (>=1200px), while horizontal table scrolling remains functional on narrower screens (<1200px).
 - the FAQ section renders under the footnotes, accordion items expand/collapse smoothly in both themes, and JSON-LD schema markup is intact in the head.
@@ -98,7 +98,7 @@ For `data.csv`:
 - Every row must have the exact same number of columns as the header row.
 - All double quotes and commas must be properly escaped per standard CSV format.
 - Every footnote reference (e.g. `[1]`) must have a corresponding ID in `notes.csv`.
-- Logs warnings for non-standard formats in `Multi-Gig порт` (e.g. `1 2.5G` instead of `1x 2.5G`) and `Доступность` to encourage contributors to maintain clean styling.
+- Logs warnings for non-standard formats in `Multi-Gig порт` (e.g. `1 2.5G` instead of `1x 2.5G`, while allowing combined speeds like `1x 10G + 1x 2.5G` and stripping `[N]` footnote markers prior to validation) and `Доступность` (also with `[N]` footnote markers stripped) to encourage contributors to maintain clean styling.
 
 For `notes.csv`:
 - Cannot be empty.

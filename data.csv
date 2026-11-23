@@ -1,6 +1,19 @@
 Модель,SoC,Ядра,Частота,Wi-Fi,Flash,RAM,Антенны,Multi-Gig порт,USB,Управление питанием USB,PoE,Порты,Форм-фактор,Доступность
 ABT ASR3000,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,4,Настольный,Китай
+Acer Predator Connect W6,MT7986AV|good,4|good,2.0 ГГц|good,Wi-Fi 6E|good,4 GB eMMC|good,1024 MB DDR4|good,6 внешних,1x 2.5G,USB 3.0|good,Нет,Нет,5,Настольный,Маркетплейсы / Китай
+Acer Predator Connect W6x,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,256 MB NAND,1024 MB DDR4|good,6 внешних,1x 2.5G,USB 3.0|good,Нет,Нет,5,Настольный,Маркетплейсы / Китай
+ASUS RT-AX59U,MT7986AV|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR3,5 внутренних,Нет,"1x USB 2.0, 1x USB 3.0|good",Нет,Нет,4,Настольный,Маркетплейсы / Розница
+ASUS TUF-AX4200,MT7986AV|good,4|good,2.0 ГГц|good,Wi-Fi 6,256 MB NAND,512 MB DDR3,4 внешних,1x 2.5G,USB 3.0|good,Нет,Нет,5,Настольный,Маркетплейсы / Розница
+ASUS TUF-AX4200Q,MT7986AV|good,4|good,2.0 ГГц|good,Wi-Fi 6,256 MB NAND,512 MB DDR3,4 внешних,2x 2.5G|good,USB 3.0|good,Нет,Нет,6,Настольный,Маркетплейсы / Китай
+ASUS TUF-AX6000,MT7986AV|good,4|good,2.0 ГГц|good,Wi-Fi 6,256 MB NAND,512 MB DDR3,6 внешних,2x 2.5G|good,USB 3.0|good,Нет,Нет,6,Настольный,Маркетплейсы / Розница
+ASUS ZenWiFi BT8,MT7988D|good,3,1.8 ГГц|good,Wi-Fi 7|good,128 MB NAND,1024 MB DDR4|good,7 внутренних,2x 2.5G|good,USB 3.0|good,Нет,Нет,4,Настольный,Маркетплейсы / Розница
+Banana Pi BPI-R3,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,8 GB eMMC|good,2048 MB DDR4|good,8 внешних|good,2x 2.5G[20]|good,USB 3.0 + M.2|good,Нет,Нет,7,Плата (DIY),Маркетплейсы / Китай
+Banana Pi BPI-R3 Mini,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,8 GB eMMC|good,2048 MB DDR4|good,3 внешних,2x 2.5G|good,USB 2.0 + 2x M.2,Да[2]|warn,Нет,2,Плата (DIY),Маркетплейсы / Китай
+Banana Pi BPI-R4[18],MT7988A|good,4|good,1.8 ГГц|good,Wi-Fi 7 (опц.)|warn,8 GB eMMC|good,4096 MB DDR4|good,По модулю,2x 10G[19]|good,USB 3.0 + M.2|good,Нет,Да (опц.),6,Плата (DIY),Маркетплейсы / Китай
+Banana Pi BPI-R4 Lite[18],MT7987A|good,4|good,2.0 ГГц|good,Wi-Fi 7 (опц.)|warn,8 GB eMMC|good,2048 MB DDR4|good,По модулю,2x 2.5G[20]|good,USB 3.0 + M.2|good,Нет,Да (опц.),6,Плата (DIY),Маркетплейсы / Китай
+Banana Pi BPI-R4 Pro[18],MT7988A|good,4|good,1.8 ГГц|good,Wi-Fi 7 (опц.)|warn,8 GB eMMC|good,4096 / 8192 MB DDR4|good,По модулю,2x 10G[19] + 4x 2.5G|good,"1x USB 2.0, 1x USB 3.0 + M.2|good",Нет,Да (опц.),7,Плата (DIY),Китай
 Bazis AX3000WM / WD-R3000N-G2A[6],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,2 внешних + 1 внутр.,1x 2.5G,USB 3.0|good,Да|good,Нет,2,Компактный,Маркетплейсы / Китай
+Benton SN-R1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 GB eMMC|good,1024 MB DDR4|good,Внутренние,Нет,Нет,Нет,Нет,5,Настольный,Китай
 Cetron CT3003,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,4,Настольный,Китай
 CMCC A10 / SuperElectron ZN-M5,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,6 внешних,Нет,Нет,Нет,Нет,4,Настольный,Китай
 CMCC RAX3000M / RAX3000Me / XR30[1],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND / 64 GB eMMC|good,512 MB DDR4,4 внешних,Нет,USB 3.0|good,Да[3]|warn,Нет,4,Настольный,Китай
@@ -10,6 +23,7 @@ Cudy AP3000 v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR4,5 внутр
 Cudy AP3000 Outdoor v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,2 внешних + 1 внутр.,Нет,Нет,Нет,Да (WAN)|good,1,Точка доступа,Маркетплейсы / Розница
 Cudy AP3000 Wall v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,3 внутренних,Нет,Нет,Нет,Да (WAN)|good,5,Точка доступа,Маркетплейсы / Розница
 Cudy M3000 v1 / M3000 v2[7],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внутренних,1x 2.5G,Нет,Нет,Нет,2,Настольный,Маркетплейсы / Розница
+Cudy P2 v1[17],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внутр. + 2x SMA,Нет,Нет,Нет,Нет,2,Настольный,Маркетплейсы / Розница
 Cudy TR3000 / TR30,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 / 256 MB NAND[4],512 MB DDR3,2 внешних + 1 внутр.,1x 2.5G,USB 3.0|good,Да[2]|warn,Нет,2,Компактный,Маркетплейсы / Розница
 Cudy WBR3000UAX v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3,4 внешних,Нет,USB 3.0|good,Да[2]|warn,Нет,5,Настольный,Маркетплейсы
 Cudy WR3000E v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешних,Нет,Нет,Нет,Нет,5,Настольный,Снят с продажи
@@ -19,8 +33,11 @@ Cudy WR3000S v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внеш�
 Cudy WR3000U v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3,4 внешних,Нет,USB 3.0|good,Нет,Нет,5,Настольный,Маркетплейсы / Розница
 D-Link AQUILA PRO AI M30 A1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3,5 внутренних,Нет,Нет,Нет,Нет,5,Настольный,Маркетплейсы
 Gemtek MXF-W1700K,AN7581GT|good,4|good,1.3 ГГц,Wi-Fi 7|good,512 MB NAND|good,2048 MB DDR4|good,9 внутренних|good,2x 10G|good,Нет,Нет,Нет,6,Настольный,Китай
+GL.iNet Beryl 7 (GL-MT3600BE)[5],MT7987A|good,4|good,2.0 ГГц|good,Wi-Fi 7 без 6 ГГц|warn,512 MB NAND|good,512 MB DDR4,2 внешних,2x 2.5G|good,USB 3.0|good,Да[2]|warn,Нет,2,Компактный,Маркетплейсы / Китай
 GL.iNet Beryl AX (GL-MT3000)[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3,2 внешних + 1 внутр.,1x 2.5G,USB 3.0|good,Да|good,Нет,2,Компактный,Маркетплейсы
 GL.iNet Flint 2 (GL-MT6000),MT7986|good,4|good,2.0 ГГц|good,Wi-Fi 6,8 GB eMMC|good,1024 MB DDR4|good,4 внешних,2x 2.5G|good,USB 3.0|good,Нет,Нет,6,Настольный,Маркетплейсы
+GL.iNet Flint 4 (GL-BE14000)[5],MT7988A|good,4|good,1.8 ГГц|good,Wi-Fi 7|good,64 GB eMMC|good,2048 MB DDR4|good,6 внешних,2x 10G[19] + 4x 2.5G|good,2x USB 3.0|good,Да|good,Нет,10,Настольный,Маркетплейсы / Китай
+GL.iNet Slate 7 Pro (GL-BE10000)[5],MT7987A|good,4|good,2.0 ГГц|good,Wi-Fi 7|good,512 MB NAND|good,1024 MB DDR4|good,2 внешних,2x 2.5G|good,USB 3.0|good,Да[2]|warn,Нет,2,Компактный,Маркетплейсы / Китай
 H3C Magic NX30 Pro,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,4,Настольный,Маркетплейсы / Китай
 Hiveton H5000M,MT7987A|good,4|good,2.0 ГГц|good,Wi-Fi 7 без 6 ГГц|warn,8GB eMMC|good,1024 MB DDR4|good,Два варианта[11],2x 2.5G|good,m2 модуль,Неизвестно,Нет,2,Компактный,Маркетплейсы / Китай
 Huasifei WH3000[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,8 GB eMMC|good,1024 MB DDR4|good,2 внешних + 1 внутр.,1x 2.5G,USB 3.0|good,Да|good,Нет,2,Компактный,Маркетплейсы
@@ -28,7 +45,14 @@ Huasifei WH3000 Pro eMMC[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,8 GB eMMC|good,1024 MB 
 Huasifei WH3000 Pro NAND[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,1024 MB DDR4|good,2 внешних + 1 внутр.,1x 2.5G,USB 3.0 + m2 модуль|good,Да|good,Нет,2,Компактный,Маркетплейсы
 Huasifei WH3000R NAND,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3,4 внешних,Нет,USB 3.0|good,Нет,Нет,4,Настольный,Маркетплейсы
 JCG Q30 Pro,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,4,Настольный,Китай
+JDCloud RE-CP-03,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 GB eMMC|good,1024 MB DDR4|good,Внутренние,1x 2.5G,Нет,Нет,Нет,5,Настольный,Китай
+Keenetic Buddy 6 (KN-3411) / Netcraze NC-3411,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,2 внешних,Нет,Нет,Нет,Нет,1,Точка доступа,Маркетплейсы / Розница
+Keenetic Giga (KN-1012) / Netcraze NC-1012,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR4,4 внешних,1x 2.5G[13],"1x USB 2.0, 1x USB 3.0|good",Да (2x GPIO)|good,Нет,5,Настольный,Маркетплейсы / Розница
+Keenetic Hopper (KN-3811),MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR4,5 внешних,Нет,USB 3.0|good,Да[2]|warn,Нет,4,Настольный,Маркетплейсы / Розница
+Keenetic Sprinter (KN-3711),MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR4,5 внешних,Нет,Нет,Нет,Нет,4,Настольный,Маркетплейсы / Розница
+Keenetic Titan (KN-1812) / Netcraze Ultra (NC-1812),MT7988D|good,3,1.8 ГГц|good,Wi-Fi 7 без 6 ГГц|warn,256 MB NAND,1024 MB DDR4|good,8 внешних + 2 внутр.|good,1x 10G + 1x 2.5G|good,"1x USB 2.0, 1x USB 3.0|good",Да (2x GPIO)|good,Нет,6,Настольный,Маркетплейсы / Розница
 Konka KOMI A31,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,4,Настольный,Китай
+Mercusys Halo H90X v1[12],MT7986BLA|good,4|good,1.6 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3,Внутренние,1x 2.5G,Нет,Нет,Нет,3,Настольный,Маркетплейсы / Розница
 Mercusys MR85X,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3,4 внешних,1x 2.5G,Нет,Нет,Нет,4,Настольный,Маркетплейсы / Розница
 Mercusys MR90X v1,MT7986BLA|good,4|good,1.6 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3,8 внешних|good,1x 2.5G,Нет,Нет,Нет,4,Настольный,Маркетплейсы / Розница
 Netcore n60,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,256 MB DDR4,8 внешних|good,1x 2.5G,Нет,Нет,Нет,5,Настольный,Китай
@@ -41,14 +65,28 @@ netis NX62 / Netcore n60 pro,MT7986AV|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB
 Nokia EA0326GMP,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,4,Настольный,Китай
 Nokia XG-040G-MD,AN7581DT|good,4|good,1.2 ГГц[10],Нет|warn,256 MB NAND,512 MB DDR4,Нет,1x 2.5G,"1x USB 2.0, 1x USB 3.0|good",Да (2x GPIO)|good,Нет,4,Настольный,Китай
 Nokia XG-040G-MF,AN7583DT,2,1.2 ГГц[10],Нет|warn,256 MB NAND,512 MB DDR4,Нет,1x 2.5G,"1x USB 2.0, 1x USB 3.0|good",Да (2x GPIO)|good,Нет,4,Настольный,Китай
+OpenWrt One,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND[21],1024 MB DDR4|good,3 внешних,1x 2.5G,USB 2.0 + M.2 NVMe,Да|good,Да (WAN)|good,2,Компактный,Китай
 Qihoo 360T7,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,4,Настольный,Китай
+Quantum Fiber Q1000K[16],AN7581SIT|good,4|good,1.3 ГГц,Нет|warn,512 MB NAND|good,512 MB DDR4,Нет,1x 10G|good,Нет,Нет,Нет,2,Настольный,Китай
 Redmi AX6000 (RB06),MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR4,4 внешних,Нет,Нет,Нет,Нет,4,Настольный,Маркетплейсы / Китай
 Routerich AX3000 v1,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3,6 внешних,Нет,USB 3.0|good,Да|good,Нет,4,Настольный,Маркетплейсы / ТГ чат
+Routerich BE7200,MT7987A|good,4|good,2.0 ГГц|good,Wi-Fi 7 без 6 ГГц|warn,512 MB NAND|good,1024 MB DDR4|good,Внутренние,1x 2.5G,USB 3.0|good,Да|good,Нет,4,Настольный,Маркетплейсы / ТГ чат
+Ruijie RG-X60 Pro,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR3,4 внешних,1x 2.5G,Нет,Нет,Нет,5,Настольный,Маркетплейсы / Китай
 SNR CPE AX2,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешних,Нет,Нет,Нет,Нет,5,Настольный,Маркетплейсы
 Tenda BE12 Pro,MT7987A|good,4|good,2.0 ГГц|good,Wi-Fi 7 без 6 ГГц|warn,128 MB NAND,512 MB DDR4,5 внешних,2x 2.5G|good,Нет,Нет,Нет,5,Настольный,Маркетплейсы / Китай
+TP-Link Archer AX80 v1[15],MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR4,8 внешних|good,1x 2.5G,USB 3.0|good,Нет,Нет,5,Настольный,Маркетплейсы / Розница
+TP-Link Archer BE450[12],MT7988D|good,3,1.8 ГГц|good,Wi-Fi 7 без 6 ГГц|warn,128 MB NAND,512 MB DDR4,5 внутренних,1x 10G + 1x 2.5G|good,USB 3.0|good,Да[2]|warn,Нет,5,Настольный,Маркетплейсы / Розница
+TP-Link EX820v[12],MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR4,Внутренние,2x 2.5G|good,USB 3.0|good,Нет,Нет,5,Настольный,Маркетплейсы / Китай
 TP-Link TL-7DR7230 v1/v2,MT7988D|good,3,1.8 ГГц|good,Wi-Fi 7 без 6 ГГц|warn,128 MB NAND,512 MB DDR4/3,8 внешних|good,1x 2.5G,Нет,Нет,Нет,5,Настольный,Маркетплейсы / Китай
 TP-Link TL-7DR7250 v1,MT7988D|good,3,1.8 ГГц|good,Wi-Fi 7 без 6 ГГц|warn,128 MB NAND,512 MB DDR4,5 внутренних,2x 2.5G|good,Нет,Нет,Нет,4,Настольный,Маркетплейсы / Китай
+TP-Link TL-XDR6086,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR4,Внутренние,2x 2.5G|good,USB 3.0|good,Нет,Нет,3,Настольный,Китай
+TP-Link TL-XDR6088,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,128 MB NAND,512 MB DDR4,8 внешних|good,2x 2.5G|good,USB 3.0|good,Нет,Нет,6,Настольный,Китай
 Wavlink WL-WNT100X3[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR3,2 внешних + 1 внутр.,Нет,USB 3.0|good,Нет,Нет,2,Компактный,Маркетплейсы
 wwGate AX3000,MT7981B,2,1.3 ГГц,Wi-Fi 6,256 MB NAND,512 MB DDR3,4 внешних,Нет,USB 3.0|good,Нет,Нет,4,Настольный,Маркетплейсы
+Xiaomi Mi Router AX3000T[14],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,4 внешних,Нет,Нет,Нет,Нет,4,Настольный,Маркетплейсы / Розница / Китай
 Xiaomi WR30U,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,5 внешних,Нет,Нет,Нет,Нет,4,Настольный,Китай
 Zbtlink ZBT-Z8102AX,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,1024 MB DDR4|good,8 внешних|good,Нет,USB 3.0 + 2x m2 модуль|good,Неизвестно,Нет,5,Настольный,Китай
+Zbtlink ZBT-Z8105AX-C,MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,256 MB DDR3,Внутренние,Нет,m2 модуль,Нет,Нет,4,Настольный,Китай
+Zbtlink ZBT-Z8114AX-DS[5],MT7981B,2,1.3 ГГц,Wi-Fi 6,128 MB NAND,512 MB DDR4,6 внешних,Нет,USB 2.0 + m2 модуль,Нет,Нет,2,Компактный,Китай
+Zbtlink ZBT-Z8803BE[5],MT7988AV|good,4|good,1.8 ГГц|good,Wi-Fi 7|good,128 MB NAND,1024 MB DDR4|good,Внешние SMA,1x 10G[19] + 1x 2.5G|good,USB 3.0 + 2x m2 модуль|good,Неизвестно,Нет,5,Настольный,Китай
+Zyxel EX5601-T0 / T-56,MT7986A|good,4|good,2.0 ГГц|good,Wi-Fi 6,512 MB NAND|good,1024 MB DDR4|good,Внутренние,2x 2.5G[13]|good,USB 3.0|good,Нет,Нет,5,Настольный,Маркетплейсы / Китай

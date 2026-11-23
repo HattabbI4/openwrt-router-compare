@@ -831,6 +831,17 @@ table.diff-mode tr:not([hidden]) td.diff-diff {
     display: inline-block;
 }
 
+.speed-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3px;
+}
+
+.speed-item {
+    white-space: nowrap;
+}
+
 .tag-25g {
     background: rgba(59, 130, 246, 0.12);
     color: var(--link);
@@ -873,6 +884,7 @@ table.diff-mode tr:not([hidden]) td.diff-diff {
     height: 7px;
     border-radius: 50%;
     display: inline-block;
+    flex-shrink: 0;
 }
 
 .dot-green { background: #10b981; }
@@ -1162,8 +1174,12 @@ sup:hover, sup:target {
         max-width: 220px;
     }
 
-    .tag-speed, .avail-tag {
+    .tag-speed {
         white-space: nowrap;
+    }
+
+    .avail-tag {
+        white-space: normal;
     }
 }
 

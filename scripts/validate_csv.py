@@ -68,16 +68,16 @@ def main():
                     # Check Multi-Gig port format (column 8)
                     mg_idx = 8
                     if mg_idx < len(row):
-                        raw_mg = row[mg_idx].split('|')[0].strip()
-                        # Accept: "Нет", or "{N}x {Speed}G" (e.g. 1x 2.5G, 2x 2.5G, 1x 10G, 2x 10G)
-                        valid_mg = raw_mg == "Нет" or bool(re.match(r'^\d+x\s+(?:2\.5|5|10)G$', raw_mg))
+                        raw_mg = re.sub(r'\[\d+\]', '', row[mg_idx].split('|')[0]).strip()
+                        # Accept: "Нет", "{N}x {Speed}G", or combined speeds joined by "+"
+                        valid_mg = raw_mg == "Нет" or bool(re.match(r'^\d+x\s+(?:2\.5|5|10)G(?:\s*\+\s*\d+x\s+(?:2\.5|5|10)G)*$', raw_mg))
                         if not valid_mg:
-                            warnings.append(f"data.csv row {row_num} ('{row[0]}') has non-standard Multi-Gig format: '{row[mg_idx]}'. Recommended: 'Нет', '1x 2.5G', '2x 2.5G', etc.")
+                            warnings.append(f"data.csv row {row_num} ('{row[0]}') has non-standard Multi-Gig format: '{row[mg_idx]}'. Recommended: 'Нет', '1x 2.5G', '2x 2.5G', '1x 10G + 1x 2.5G', etc.")
 
                     # Check Availability format (column 14)
                     avail_idx = 14
                     if avail_idx < len(row):
-                        raw_avail = row[avail_idx].split('|')[0].strip()
+                        raw_avail = re.sub(r'\[\d+\]', '', row[avail_idx].split('|')[0]).strip()
                         known_parts = {"Маркетплейсы", "Розница", "Китай", "Снят с продажи", "ТГ чат"}
                         parts = [p.strip() for p in raw_avail.split('/')]
                         unknown = [p for p in parts if p not in known_parts]

@@ -123,15 +123,42 @@ function renderFootnotes(text, notes) {
     });
 }
 
+function formatSpeedToken(rawPart, notes) {
+    const fnMatch = rawPart.match(/((?:\[\d+\])+)$/);
+    const label = fnMatch ? rawPart.slice(0, fnMatch.index).trim() : rawPart;
+    const fnHtml = fnMatch ? renderFootnotes(fnMatch[1], notes) : "";
+    const labelHtml = renderFootnotes(label, notes);
+    const plain = label.replace(/\[\d+\]/g, "");
+    if (/10\s*(?:g|г|gbe|gbps|гбит)/i.test(plain)) {
+        return `<span class="tag-speed tag-10g">${labelHtml}</span>${fnHtml}`;
+    }
+    if (/(?:2[.,]5|5)\s*(?:g|г|gbe|gbps|гбит)/i.test(plain)) {
+        return `<span class="tag-speed tag-25g">${labelHtml}</span>${fnHtml}`;
+    }
+    return `${labelHtml}${fnHtml}`;
+}
+
 function formatCell(text, colIdx, notes) {
-    const rendered = renderFootnotes(text, notes);
     const clean = text.trim();
 
     if (colIdx === 8) {
-        if (/^(?:нет|-|—|none)$/i.test(clean)) return `<span class="dimmed">${rendered}</span>`;
-        if (/10\s*(?:g|г|gbe|gbps|гбит)/i.test(clean)) return `<span class="tag-speed tag-10g">${rendered}</span>`;
-        if (/(?:2[.,]5|5)\s*(?:g|г|gbe|gbps|гбит)/i.test(clean)) return `<span class="tag-speed tag-25g">${rendered}</span>`;
+        if (clean.includes("+")) {
+            const tags = clean
+                .split("+")
+                .map(part => `<span class="speed-item">${formatSpeedToken(part.trim(), notes)}</span>`)
+                .join(" ");
+            return `<span class="speed-tags">${tags}</span>`;
+        }
+        const fnMatch = clean.match(/((?:\[\d+\])+)$/);
+        const base = fnMatch ? clean.slice(0, fnMatch.index).trim() : clean;
+        const fnHtml = fnMatch ? renderFootnotes(fnMatch[1], notes) : "";
+        if (/^(?:нет|-|—|none)$/i.test(base)) {
+            return `<span class="dimmed">${renderFootnotes(base, notes)}</span>${fnHtml}`;
+        }
+        return formatSpeedToken(clean, notes);
     }
+
+    const rendered = renderFootnotes(text, notes);
 
     if (colIdx === 14) {
         if (/маркетплейс|розниц|рф/i.test(clean)) return `<span class="avail-tag"><span class="dot dot-green"></span>${rendered}</span>`;
