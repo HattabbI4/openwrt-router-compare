@@ -72,6 +72,7 @@ The project has no automated tests. After making changes, verify manually that:
 - footnote tooltips appear on hover/focus over `sup`, and footnote items contain a backlink (`↑ к таблице`) that returns to the table;
 - table fits within the desktop viewport without horizontal scroll on standard laptop and desktop screens (>=1200px), while horizontal table scrolling remains functional on narrower screens (<1200px).
 - the FAQ section renders under the footnotes, accordion items expand/collapse smoothly in both themes, and JSON-LD schema markup is intact in the head.
+- the top-right peeling GitHub Star corner (`.github-corner`) renders with the accent blue reveal and theme-matched paper flap in both light and dark themes, sits clear of `.theme-switch` on desktop and mobile (`<= 768px`), peels open smoothly on pointer hover (`hover: hover` + `pointer: fine`) and keyboard `:focus-visible` without horizontal page overflow, and navigates directly on first tap on touchscreens.
 
 For CSV edits, also verify that:
 

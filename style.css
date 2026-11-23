@@ -28,6 +28,14 @@
     --active-sort-bg: #e0e7ff;
     --scrollbar-thumb: rgba(0, 0, 0, 0.2);
     --scrollbar-thumb-hover: rgba(0, 0, 0, 0.35);
+    --peel-bg-start: #2563eb;
+    --peel-bg-end: #1e3a8a;
+    --peel-flap-c0: #e2e8f0;
+    --peel-flap-c1: #ffffff;
+    --peel-flap-c2: #f1f5f9;
+    --peel-flap-c3: #cbd5e1;
+    --peel-flap-stroke: rgba(148, 163, 184, 0.45);
+    --peel-flap-shadow: rgba(15, 23, 42, 0.24);
 }
 
 [data-theme="dark"] {
@@ -56,6 +64,14 @@
     --active-sort-bg: #1e3a8a;
     --scrollbar-thumb: rgba(255, 255, 255, 0.2);
     --scrollbar-thumb-hover: rgba(255, 255, 255, 0.35);
+    --peel-bg-start: #3b82f6;
+    --peel-bg-end: #1d4ed8;
+    --peel-flap-c0: #1e293b;
+    --peel-flap-c1: #475569;
+    --peel-flap-c2: #334155;
+    --peel-flap-c3: #1e293b;
+    --peel-flap-stroke: rgba(148, 163, 184, 0.28);
+    --peel-flap-shadow: rgba(0, 0, 0, 0.62);
 }
 
 /* =====================
@@ -100,6 +116,7 @@ body {
     color: var(--text);
     transition: background-color 0.2s, color 0.2s;
     line-height: 1.5;
+    overflow-x: clip;
 }
 
 /* =====================
@@ -112,6 +129,7 @@ body {
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
+    padding-right: 60px;
 }
 
 .brand {
@@ -187,6 +205,201 @@ h1 {
     background: var(--bg);
     color: var(--link);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* =====================
+   GITHUB PEEL CORNER
+===================== */
+
+.github-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 68px;
+    height: 68px;
+    z-index: 40;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: width 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+                height 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.github-corner:focus-visible {
+    width: 174px;
+    height: 174px;
+    outline: 2px solid var(--link);
+    outline-offset: -2px;
+}
+
+.github-corner-reveal {
+    position: absolute;
+    inset: 0;
+    display: block;
+    clip-path: polygon(0 1.5%, 0 0, 100% 0, 100% 100%, 98.5% 100%);
+    overflow: hidden;
+    background: linear-gradient(225deg, var(--peel-bg-start) 0%, var(--peel-bg-end) 100%);
+    transition: filter 0.15s ease;
+}
+
+.github-corner:active .github-corner-reveal {
+    filter: brightness(1.12);
+}
+
+.github-corner-reveal::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        45deg,
+        transparent 47%,
+        rgba(0, 0, 0, 0.48) 50%,
+        rgba(0, 0, 0, 0.16) 56%,
+        transparent 66%
+    );
+}
+
+.github-corner-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 174px;
+    height: 174px;
+    pointer-events: none;
+}
+
+.github-corner-inner {
+    position: absolute;
+    top: 0;
+    right: -115px;
+    width: 230px;
+    height: 124px;
+    transform-origin: 50% 0%;
+    transform: rotate(45deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+}
+
+.github-corner-octocat {
+    margin-top: 14px;
+    width: 26px;
+    height: 26px;
+    color: #ffffff;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+    transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+                width 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+                height 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+                margin-top 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.github-corner-cta {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.24s ease 0.08s,
+                transform 0.32s cubic-bezier(0.22, 1, 0.36, 1) 0.05s;
+}
+
+.github-corner-line1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.github-corner-star {
+    width: 12px;
+    height: 12px;
+    color: #fbbf24;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.55));
+    transform: scale(0.6) rotate(-25deg);
+    transition: transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) 0.12s;
+}
+
+.github-corner-line2 {
+    margin-top: 2px;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: nowrap;
+}
+
+.github-corner-flap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    filter: drop-shadow(-3px 4px 5px var(--peel-flap-shadow));
+    transition: filter 0.36s ease;
+}
+
+.github-corner:focus-visible .github-corner-octocat {
+    transform: translateY(10px) scale(1.2);
+}
+
+.github-corner:focus-visible .github-corner-cta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.github-corner:focus-visible .github-corner-star {
+    transform: scale(1) rotate(0deg);
+}
+
+.github-corner:focus-visible .github-corner-flap {
+    filter: drop-shadow(-6px 8px 12px var(--peel-flap-shadow));
+}
+
+/* Hover peel strictly on pointer devices so touchscreens navigate on first tap */
+@media (hover: hover) and (pointer: fine) {
+    .github-corner:hover {
+        width: 174px;
+        height: 174px;
+    }
+
+    .github-corner:hover .github-corner-octocat {
+        transform: translateY(10px) scale(1.2);
+    }
+
+    .github-corner:hover .github-corner-cta {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .github-corner:hover .github-corner-star {
+        transform: scale(1) rotate(0deg);
+    }
+
+    .github-corner:hover .github-corner-flap {
+        filter: drop-shadow(-6px 8px 12px var(--peel-flap-shadow));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .github-corner,
+    .github-corner-reveal,
+    .github-corner-octocat,
+    .github-corner-cta,
+    .github-corner-star,
+    .github-corner-flap {
+        transition: none;
+    }
 }
 
 /* =====================
@@ -966,6 +1179,7 @@ sup:hover, sup:target {
         justify-content: space-between;
         align-items: flex-start;
         gap: 8px;
+        padding-right: 48px;
     }
 
     .brand {
@@ -1120,5 +1334,42 @@ sup:hover, sup:target {
     .faq-answer {
         padding: 0 12px 12px 12px;
         font-size: 12.5px;
+    }
+
+    .github-corner {
+        width: 52px;
+        height: 52px;
+    }
+
+    .github-corner-octocat {
+        margin-top: 9px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .github-corner:focus-visible {
+        width: 162px;
+        height: 162px;
+    }
+
+    .github-corner:focus-visible .github-corner-octocat {
+        width: 26px;
+        height: 26px;
+        margin-top: 13px;
+        transform: translateY(8px) scale(1.1);
+    }
+}
+
+@media (max-width: 768px) and (hover: hover) and (pointer: fine) {
+    .github-corner:hover {
+        width: 162px;
+        height: 162px;
+    }
+
+    .github-corner:hover .github-corner-octocat {
+        width: 26px;
+        height: 26px;
+        margin-top: 13px;
+        transform: translateY(8px) scale(1.1);
     }
 }
